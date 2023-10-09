@@ -7,12 +7,12 @@ module.exports = {
       colors: {
         background: '#000000',
         primary: '#8063A6',
-        secondary: '#ffffff',
-      },
-    },
+        secondary: '#ffffff'
+      }
+    }
   },
   // eslint-disable-next-line no-undef
-  plugins: [require('flowbite/plugin')],
+  plugins: [require('flowbite/plugin')]
 };
 
 /**

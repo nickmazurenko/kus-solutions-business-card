@@ -14,7 +14,7 @@ export default function SpotLightShape(props: SpotLightShapeProps) {
     color = 'red',
     opacity = '50%',
     blur = '192px',
-    sticky = false,
+    sticky = false
   } = props;
   return (
     <div className={`absolute ${position} ${sticky ? 'sticky' : ''}`}>
@@ -24,7 +24,7 @@ export default function SpotLightShape(props: SpotLightShapeProps) {
           width: size,
           height: size,
           filter: `blur(${blur})`,
-          opacity,
+          opacity
         }}
         className="rounded-full"
       ></div>
