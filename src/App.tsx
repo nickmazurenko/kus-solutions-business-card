@@ -5,7 +5,7 @@ import HomePage from './pages/Home';
 
 function App() {
   return (
-    <div className="App h-full">
+    <div className='h-full'>
       <HomePage />
     </div>
   );

@@ -33,6 +33,7 @@ module.exports = {
       'error',
       {
         singleQuote: true, // Use single quotes
+        jsxSingleQuote: true,
         trailingComma: 'none',
         printWidth: 100,
         tabWidth: 2

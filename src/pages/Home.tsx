@@ -3,7 +3,7 @@ import HomepageSpotLights from '../components/Homepage/SpotLights';
 
 export default function HomePage() {
   return (
-    <div className="w-full h-[2000px]">
+    <div className='w-full h-[2000px]'>
       <HomepageHeader />
       <HomepageSpotLights />
     </div>

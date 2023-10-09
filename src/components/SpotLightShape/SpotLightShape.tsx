@@ -26,7 +26,7 @@ export default function SpotLightShape(props: SpotLightShapeProps) {
           filter: `blur(${blur})`,
           opacity
         }}
-        className="rounded-full"
+        className='rounded-full'
       ></div>
     </div>
   );
