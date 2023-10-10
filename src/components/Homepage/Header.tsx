@@ -1,31 +1,37 @@
-import { Navbar, Button } from 'flowbite-react';
+import { Navbar } from 'flowbite-react';
+import ContactUsButton from '../buttons/ContactUsButton';
 
 export default function HomepageHeader() {
   return (
-    <div className='w-full top-5 sticky'>
-      <Navbar className='bg-background bg-opacity-40 ' fluid rounded>
+    <div className='w-full  top-5 sticky z-50'>
+      <Navbar className='bg-background bg-opacity-40' fluid rounded>
         <Navbar.Brand href='/'>
-          <img alt='logo' className='mr-3 h-6 sm:h-9' src='/favicon.svg' />
-          <span className='self-center whitespace-nowrap text-xl font-semibold text-secondary'>
-            {"Kus' Solutions"}
-          </span>
+          <img
+            alt='logo'
+            className='mr-3 h-11 md:h-14'
+            src={process.env.PUBLIC_URL + '/logo.png'}
+          />
+          <div className='text-lg md:text-2xl font-coiny text-secondary tracking-wider leading-5 md:leading-6'>
+            <div className='whitespace-nowrap text-primary'>{"Kus'"}</div>
+            <div className='whitespace-nowrap'>Solutions</div>
+          </div>
         </Navbar.Brand>
-        <div className='flex md:order-2 gap-2'>
-          <Button className='bg-primary'>Contact Us</Button>
-          <Button className='bg-transparent'>EN\UA</Button>
+        <div className='flex md:order-2 gap-2 md:gap-6 md:pr-5 items-center h-full text-xs md:text-base text-secondary'>
+          <ContactUsButton />
+          <span>EN\UA</span>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <Navbar.Link className='text-primary' href='#'>
-            <p>Home</p>
+          <Navbar.Link className='text-primary text-lg' href='#'>
+            Home
           </Navbar.Link>
-          <Navbar.Link className='text-secondary' href='#'>
+          <Navbar.Link className='text-secondary text-lg' href='#'>
             Technologies
           </Navbar.Link>
-          <Navbar.Link href='#' className='text-secondary'>
+          <Navbar.Link className='text-secondary text-lg' href='#'>
             Reviews
           </Navbar.Link>
-          <Navbar.Link href='#' className='text-secondary'>
+          <Navbar.Link className='text-secondary text-lg' href='#'>
             About Us
           </Navbar.Link>
         </Navbar.Collapse>
@@ -33,7 +39,3 @@ export default function HomepageHeader() {
     </div>
   );
 }
-
-// <div classNameName="w-full top-10 sticky">
-//   <div classNameName="flex items-center justify-between px-5 text-secondary">Some text</div>
-// </div>
