@@ -4,9 +4,13 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        coiny: ['Coiny', 'cursive'],
+        dongle: ['Dongle', 'sans-serif']
+      },
       colors: {
         background: '#000000',
-        primary: '#8063A6',
+        primary: '#8063A6', // #7032c2
         secondary: '#ffffff'
       }
     }
