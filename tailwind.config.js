@@ -12,6 +12,9 @@ module.exports = {
         background: '#000000',
         primary: '#8063A6', // #7032c2
         secondary: '#ffffff'
+      },
+      boxShadow: {
+        button: '-5px 5px 0px 2px'
       }
     }
   },
