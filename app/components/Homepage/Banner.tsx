@@ -1,19 +1,6 @@
 import OrderNowButton from '../buttons/OrderNowButton';
+import ImageBanner from './ImageBanner';
 import HomepageTextCard from './TextCard';
-
-const ImageBanner = ({ className }: { className?: string }) => {
-  return (
-    <div
-      className={`top-0 w-full ${className} inset-0 flex items-center justify-center md:absolute md:left-44 md:top-[-30%]`}
-    >
-      <img
-        className='z-0 h-full w-full object-contain md:w-auto'
-        alt='banner-image'
-        src={process.env.PUBLIC_URL + '/assets/textPurple.png'}
-      />
-    </div>
-  );
-};
 
 const LeftBanner = ({ className }: { className?: string }) => {
   return (

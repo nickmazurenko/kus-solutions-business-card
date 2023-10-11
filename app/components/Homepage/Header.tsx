@@ -4,13 +4,9 @@ import ContactUsButton from '../buttons/ContactUsButton';
 export default function HomepageHeader() {
   return (
     <div className='sticky  top-5 z-50 w-full'>
-      <Navbar className='bg-background bg-opacity-40' fluid rounded>
+      <Navbar className='bg-background/60' fluid rounded>
         <Navbar.Brand href='/'>
-          <img
-            alt='logo'
-            className='mr-3 h-11 md:h-14'
-            src={process.env.PUBLIC_URL + '/logo.png'}
-          />
+          <img alt='logo' className='mr-3 h-11 md:h-14' src='./assets/logo.png' />
           <div className='font-coiny text-lg leading-5 tracking-wider text-secondary md:text-2xl md:leading-6'>
             <div className='whitespace-nowrap text-primary'>{"Kus'"}</div>
             <div className='whitespace-nowrap'>Solutions</div>
