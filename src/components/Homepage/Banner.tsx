@@ -4,10 +4,10 @@ import HomepageTextCard from './TextCard';
 const ImageBanner = ({ className }: { className?: string }) => {
   return (
     <div
-      className={`w-full top-0 ${className} md:left-44 md:absolute md:top-[-30%] justify-center items-center flex inset-0`}
+      className={`top-0 w-full ${className} inset-0 flex items-center justify-center md:absolute md:left-44 md:top-[-30%]`}
     >
       <img
-        className='z-0 w-full h-full md:w-auto object-contain'
+        className='z-0 h-full w-full object-contain md:w-auto'
         alt='banner-image'
         src={process.env.PUBLIC_URL + '/assets/textPurple.png'}
       />
@@ -18,9 +18,9 @@ const ImageBanner = ({ className }: { className?: string }) => {
 const LeftBanner = ({ className }: { className?: string }) => {
   return (
     <div
-      className={`w-full md:w-1/2 text-secondary justify-center gap-10 md:gap-32 items-center flex flex-col h-full font-coiny ${className}`}
+      className={`flex h-full w-full flex-col items-center justify-center gap-10 font-coiny text-secondary md:w-1/2 md:gap-32 ${className}`}
     >
-      <div className='md:text-right text-center'>
+      <div className='text-center md:text-right'>
         <div className='text-3xl lg:text-6xl'>WebSites with a</div>
         <div className='text-2xl lg:text-5xl'>
           <span className='text-primary'>{"Kus'"}</span>tom Touch!
@@ -34,9 +34,9 @@ const LeftBanner = ({ className }: { className?: string }) => {
 const RightBanner = ({ className }: { className?: string }) => {
   return (
     <div
-      className={`w-full md:w-1/2 flex flex-col h-full relative px-10 items-center justify-center ${className}`}
+      className={`relative flex h-full w-full flex-col items-center justify-center px-10 md:w-1/2 ${className}`}
     >
-      <div className='w-full flex flex-col items-center md:items-end gap-10 justify-center md:justify-end'>
+      <div className='flex w-full flex-col items-center justify-center gap-10 md:items-end md:justify-end'>
         <HomepageTextCard
           label='☄️ Quick'
           text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labores fsafas fsa fsaf saf safasfsa fsa fa'
@@ -56,8 +56,8 @@ const RightBanner = ({ className }: { className?: string }) => {
 
 export default function HomepageBanner() {
   return (
-    <div className='w-full h-full flex relative top-20 md:top-44 items-center justify-center'>
-      <div className='flex flex-col md:flex-row gap-10 w-full h-full z-10 items-center justify-center'>
+    <div className='relative top-20 flex h-full w-full items-center justify-center md:top-44'>
+      <div className='z-10 flex h-full w-full flex-col items-center justify-center gap-10 md:flex-row'>
         <ImageBanner className='z-0' />
         <LeftBanner className='z-10' />
         <RightBanner className='z-10' />
