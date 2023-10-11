@@ -1,5 +1,3 @@
-import SpotLightShape from '../SpotLightShape/SpotLightShape';
-
 interface HomepageTextCardProps {
   label: string;
   text: string;

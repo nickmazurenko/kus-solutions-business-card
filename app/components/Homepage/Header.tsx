@@ -4,7 +4,7 @@ import ContactUsButton from '../buttons/ContactUsButton';
 export default function HomepageHeader() {
   return (
     <div className='sticky  top-5 z-50 w-full'>
-      <Navbar className='bg-background/60' fluid rounded>
+      <Navbar className='bg-background/60' rounded fluid>
         <Navbar.Brand href='/'>
           <img alt='logo' className='mr-3 h-11 md:h-14' src='./assets/logo.png' />
           <div className='font-coiny text-lg leading-5 tracking-wider text-secondary md:text-2xl md:leading-6'>
@@ -18,11 +18,11 @@ export default function HomepageHeader() {
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <Navbar.Link className='text-lg text-primary' href='#'>
-            Home
-          </Navbar.Link>
           <Navbar.Link className='text-lg text-secondary' href='#'>
             Technologies
+          </Navbar.Link>
+          <Navbar.Link className='text-lg text-primary' href='#'>
+            Examples
           </Navbar.Link>
           <Navbar.Link className='text-lg text-secondary' href='#'>
             Reviews

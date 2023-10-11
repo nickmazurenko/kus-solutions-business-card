@@ -1,3 +1,4 @@
+import SpotLightShape from '../SpotLightShape/SpotLightShape';
 import OrderNowButton from '../buttons/OrderNowButton';
 import ImageBanner from './ImageBanner';
 import HomepageTextCard from './TextCard';
@@ -23,6 +24,7 @@ const RightBanner = ({ className }: { className?: string }) => {
     <div
       className={`relative flex h-full w-full flex-col items-center justify-center px-10 md:w-1/2 ${className}`}
     >
+      <div className='spotlight'></div>
       <div className='flex w-full flex-col items-center justify-center gap-10 md:items-end md:justify-end'>
         <HomepageTextCard
           label='☄️ Quick'
@@ -43,8 +45,8 @@ const RightBanner = ({ className }: { className?: string }) => {
 
 export default function HomepageBanner() {
   return (
-    <div className='relative top-20 flex h-full w-full items-center justify-center md:top-44'>
-      <div className='z-10 flex h-full w-full flex-col items-center justify-center gap-10 md:flex-row'>
+    <div className='relative top-20 flex h-full w-full items-center justify-center md:top-56'>
+      <div className='z-10 flex h-full w-full flex-col items-center justify-center gap-10 border-b-4 border-primary pb-10 md:flex-row'>
         <ImageBanner className='z-0' />
         <LeftBanner className='z-10' />
         <RightBanner className='z-10' />
