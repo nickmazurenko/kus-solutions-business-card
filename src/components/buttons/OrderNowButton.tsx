@@ -8,7 +8,7 @@ export default function OrderNowButton(props: OrderNowButtonProps) {
   const { className, onClick } = props;
   return (
     <div
-      className={`${className} bg-gray-950 cursor-pointer text-secondary rounded-xl shadow-primary shadow-button hover:shadow-none hover:translate-x-[-5%] hover:translate-y-[5%] transition-all delay-200 py-4 px-5 text-2xl lg:text-4xl font-coiny`}
+      className={`${className} cursor-pointer rounded-xl bg-gray-950 px-5 py-4 font-coiny text-2xl text-secondary shadow-button shadow-primary transition-all delay-200 hover:translate-x-[-5%] hover:translate-y-[5%] hover:shadow-none lg:text-4xl`}
       onClick={onClick}
     >
       <span className='text-primary'>Order</span> now!

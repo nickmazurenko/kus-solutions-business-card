@@ -2,7 +2,7 @@ import SpotLightShape from '../SpotLightShape/SpotLightShape';
 
 export default function HomepageSpotLights() {
   return (
-    <div className='w-full h-full'>
+    <div className='h-full w-full'>
       <SpotLightShape
         size='300px'
         color='cyan'
