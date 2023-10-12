@@ -23,7 +23,7 @@ const config: Config = {
         secondary: '#ffffff'
       },
       boxShadow: {
-        button: '-5px 5px 0px 2px'
+        blblur: '-5px 5px 10px 2px'
       }
     }
   },
