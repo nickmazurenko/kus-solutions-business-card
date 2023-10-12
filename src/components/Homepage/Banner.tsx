@@ -44,7 +44,7 @@ const RightBanner = ({ className }: { className?: string }) => {
 
 export default function HomepageBanner() {
   return (
-    <div className='relative top-20 flex h-full w-full items-center justify-center md:top-56'>
+    <div className='relative mt-20 flex h-full w-full items-center justify-center md:mt-52'>
       <div className='z-10 flex h-full w-full flex-col items-center justify-center gap-10 border-b-4 border-primary pb-10 md:flex-row'>
         <ImageBanner className='z-0' />
         <LeftBanner className='z-10' />
