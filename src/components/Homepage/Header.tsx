@@ -1,10 +1,37 @@
 import { Navbar } from 'flowbite-react';
 import ContactUsButton from '../buttons/ContactUsButton';
 import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
 
 export default function HomepageHeader() {
+  const [isHeaderVisible, setHeaderVisible] = useState(true);
+  const prevScrollPos = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const isScrolledDown = prevScrollPos.current < currentScrollPos;
+
+      if (isScrolledDown) {
+        setHeaderVisible(false);
+      } else {
+        setHeaderVisible(true);
+      }
+      prevScrollPos.current = currentScrollPos;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <div className='sticky  top-5 z-50 w-full'>
+    <div
+      className={`sticky top-0 z-50 w-full transition-all duration-1000 ${
+        isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <Navbar className='bg-background/60' rounded>
         <Navbar.Brand href='/'>
           <Image
