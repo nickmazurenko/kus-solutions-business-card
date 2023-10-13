@@ -1,6 +1,10 @@
 import { Carousel } from 'flowbite-react';
 import Image from 'next/image';
 import { PiControlBold } from 'react-icons/pi';
+interface CarouselSlideProps {
+  text: string;
+  image: string;
+}
 
 const CarouselControl = ({ className }: { className: string }) => {
   return (
@@ -10,51 +14,41 @@ const CarouselControl = ({ className }: { className: string }) => {
   );
 };
 
-interface CarouselSlideProps {
-  text: string;
-  image: string;
-}
-
 const CarouselSlide = (props: CarouselSlideProps) => {
   const { text, image } = props;
   return (
-    <div className='pointer-events-none flex h-full w-full items-center justify-center justify-items-center'>
-      <div className='md:shadow-blblur h-[90%] rounded-[60px] bg-primary/25 shadow-primary md:w-[80%]'>
-        <div className='flex h-full w-full flex-col items-center justify-center p-10 md:flex-row'>
-          <div className='relative h-48 w-48'>
-            <Image
-              objectFit='contain'
-              src={image}
-              layout='fill'
-              className='h-48'
-              alt='review-image'
-            />
-            <div className='h-48 w-full rounded-xl bg-primary object-cover md:w-48'></div>
-          </div>
-
-          <div className='md:p-8'>
-            <div className='text-sm font-semibold uppercase tracking-wide text-indigo-500'>
-              Review
-            </div>
-            <p className='mt-2 break-all text-gray-600'>{text}</p>
-          </div>
+    <div className='pointer-events-none h-full w-full p-5 md:p-10 md:px-20'>
+      <div className='flex h-full w-full flex-col items-center justify-between gap-5 rounded-xl bg-primary/25 p-5 py-10 shadow-blblur shadow-primary md:flex-row'>
+        <div className='relative flex h-auto min-h-fit min-w-fit items-center justify-center rounded-2xl bg-primary md:w-1/4'>
+          <Image
+            src={image}
+            width={150}
+            height={150}
+            className='h-full min-h-fit w-full object-contain'
+            alt='slide-image'
+          />
+        </div>
+        <div className='md:w-4/3 max-h-24 overflow-hidden text-ellipsis break-words text-justify font-dongle text-3xl text-gray-300'>
+          {text}
         </div>
       </div>
     </div>
   );
 };
 
-export default function HomepageReviews() {
+export default function HomepageReviews({ className }: { className: string }) {
   return (
-    <div className='relative flex h-[100vh] w-full flex-col items-center justify-center border-b-4 border-primary p-3 md:p-10'>
+    <div className={`${className} relative flex h-full w-full flex-col`}>
       <div className='spotlight spotlight-left'></div>
-      <span className='w-full py-5 text-start font-dongle text-5xl text-secondary'>Reviews</span>
+      <span className='w-full p-5 text-center font-dongle text-5xl text-secondary md:text-start'>
+        Reviews
+      </span>
       <Carousel
         indicators={false}
         pauseOnHover
         leftControl={<CarouselControl className='-rotate-90' />}
         rightControl={<CarouselControl className='rotate-90' />}
-        className='h-[1000px] w-full lg:w-[80%]'
+        className=''
       >
         <CarouselSlide
           image='/assets/catPurple.png'
