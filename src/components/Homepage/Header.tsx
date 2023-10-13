@@ -8,23 +8,25 @@ export default function HomepageHeader() {
   const prevScrollPos = useRef(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const isScrolledDown = prevScrollPos.current < currentScrollPos;
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        const currentScrollPos = window.scrollY;
+        const isScrolledDown = prevScrollPos.current < currentScrollPos;
 
-      if (isScrolledDown) {
-        setHeaderVisible(false);
-      } else {
-        setHeaderVisible(true);
-      }
-      prevScrollPos.current = currentScrollPos;
-    };
+        if (isScrolledDown) {
+          setHeaderVisible(false);
+        } else {
+          setHeaderVisible(true);
+        }
+        prevScrollPos.current = currentScrollPos;
+      };
 
-    window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
   }, []);
   return (
     <div
@@ -38,7 +40,7 @@ export default function HomepageHeader() {
             width={50}
             height={50}
             alt='logo'
-            className='h-11 md:h-12'
+            className='h-11 w-auto md:h-14 md:w-auto'
             src='/assets/logo.png'
           />
           <div className='font-coiny text-lg leading-5 tracking-wider text-secondary md:text-xl md:leading-6'>
