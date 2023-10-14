@@ -114,7 +114,7 @@ export default function HomepageTechnologies(props: HomepageTechnologies) {
             return (
               <div
                 key={index}
-                className={`flex h-36 w-36 items-center justify-center overflow-clip rounded-full object-contain
+                className={`flex h-36 w-36 items-center justify-center overflow-clip rounded-full object-contain opacity-70
           shadow-primary/50 ${index % 2 === 0 ? 'bg-primary shadow-xl' : 'shadow-none'}`}
               >
                 {index % 2 === 0 && (
