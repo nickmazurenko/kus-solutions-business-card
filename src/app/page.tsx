@@ -5,6 +5,8 @@ import HomepageBanner from '@/components/Homepage/Banner/Banner';
 import HomepageReviews from '@/components/Homepage/Reviews';
 import { useEffect, useState } from 'react';
 import HomepageTechnologies from '@/components/Homepage/Technologies';
+import HomepageFooter from '@/components/Homepage/Footer';
+import HomepageAboutUs from '@/components/Homepage/AboutUs';
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
@@ -19,6 +21,8 @@ export default function Home() {
           <HomepageBanner className='mt-52' />
           <HomepageReviews />
           <HomepageTechnologies />
+          <HomepageAboutUs />
+          <HomepageFooter />
         </div>
       )}
     </>
