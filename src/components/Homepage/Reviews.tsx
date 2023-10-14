@@ -1,6 +1,12 @@
 import { Carousel } from 'flowbite-react';
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 import { PiControlBold } from 'react-icons/pi';
+import { gsap } from 'gsap';
+import './styles/text.css';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger from gsap
+gsap.registerPlugin(ScrollTrigger);
+
 interface CarouselSlideProps {
   text: string;
   image: string;
@@ -36,13 +42,45 @@ const CarouselSlide = (props: CarouselSlideProps) => {
   );
 };
 
-export default function HomepageReviews({ className }: { className: string }) {
+interface ReviewsProps {
+  className?: string;
+}
+
+export default function HomepageReviews(props: ReviewsProps) {
+  const { className } = props;
+  const bgTextRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(bgTextRef.current, {
+      xPercent: 28,
+      duration: 5,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: bgTextRef.current,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  }, []);
+
   return (
-    <div className={`${className} relative flex h-full w-full flex-col`}>
+    <div
+      className={`${className} relative flex h-full w-full flex-col border-b-4 border-primary py-10`}
+    >
       <div className='spotlight spotlight-left'></div>
-      <span className='w-full p-5 text-center font-dongle text-5xl text-secondary md:text-start'>
+      <div className='relative hidden w-full items-center justify-center px-10 py-16 font-dongle text-5xl text-secondary md:flex'>
+        <div
+          ref={bgTextRef}
+          className='text-shadow absolute left-[10%] z-0 text-start text-[200px] uppercase  tracking-wider text-background  brightness-50 lg:left-[25%] '
+        >
+          Reviews
+        </div>
+        <div className='z-10 text-6xl uppercase'>{`Kus'tomers' feedback`}d</div>
+      </div>
+      <div className='w-full pb-5 text-center font-dongle text-5xl text-secondary md:hidden'>
         Reviews
-      </span>
+      </div>
       <Carousel
         indicators={false}
         pauseOnHover
