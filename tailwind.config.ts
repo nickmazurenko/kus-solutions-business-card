@@ -23,7 +23,9 @@ const config: Config = {
         secondary: '#ffffff'
       },
       boxShadow: {
-        blblur: '-5px 5px 10px 2px'
+        blblur: '-5px 5px 10px 2px',
+        tl: '-2px -2px 0px 2px',
+        repeat: '-20px 20px 0px 2px, -40px 40px 0px 2px'
       }
     }
   },
