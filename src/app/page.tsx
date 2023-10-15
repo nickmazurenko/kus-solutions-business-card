@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import HomepageTechnologies from '@/components/Homepage/Technologies';
 import HomepageFooter from '@/components/Homepage/Footer';
 import HomepageAboutUs from '@/components/Homepage/AboutUs';
+import HomepageExamples from '@/components/Homepage/Examples';
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
           <HomepageHeader />
           <HomepageBanner className='mt-52' />
           <HomepageReviews />
+          <HomepageExamples />
           <HomepageTechnologies />
           <HomepageAboutUs />
           <HomepageFooter />
