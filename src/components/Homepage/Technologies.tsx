@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import OrderNowButton from '../buttons/OrderNowButton';
 import Image from 'next/image';
@@ -41,7 +41,9 @@ const TextCard = (props: TextCardProps) => {
           powerful tools
         </div>
       </div>
-      <div className='w-full text-justify text-3xl md:w-1/2'>{config.technologiesText}</div>
+      <div className='w-full rounded-3xl text-justify text-3xl md:w-1/2'>
+        {config.technologiesText}
+      </div>
       <OrderNowButton />
     </div>
   );
@@ -49,6 +51,7 @@ const TextCard = (props: TextCardProps) => {
 
 export default function HomepageTechnologies(props: HomepageTechnologies) {
   const { className } = props;
+  const [hovered, setHovered] = useState(false);
   const gridRef = useRef<HTMLDivElement | null>(null);
   // Starting index for logos
   // It is minus one cause it updates on drawing each even circle
@@ -74,13 +77,13 @@ export default function HomepageTechnologies(props: HomepageTechnologies) {
         });
       };
 
-      window.addEventListener('mousemove', updateParallax);
+      if (hovered) window.addEventListener('mousemove', updateParallax);
 
       return () => {
         window.removeEventListener('mousemove', updateParallax);
       };
     }
-  }, []);
+  }, [hovered]);
 
   // Scaling technologies on hover
   const onMouseOver = () => {
@@ -99,10 +102,16 @@ export default function HomepageTechnologies(props: HomepageTechnologies) {
 
   return (
     <div
-      className={`${className} relative flex h-screen w-full flex-col border-b-4 border-primary`}
+      onMouseEnter={() => {
+        setHovered(true);
+      }}
+      onMouseLeave={() => {
+        setHovered(false);
+      }}
+      className={`${className} relative flex h-screen w-full flex-col`}
     >
       <div className='spotlight spotlight-right'></div>
-      <div className='relative flex h-full w-full flex-col overflow-hidden px-10 py-24'>
+      <div className='relative flex h-full w-full flex-col px-10 py-24'>
         <TextCard onMouseOver={onMouseOver} onMouseLeave={onMouseLeave} />
         <div
           ref={gridRef}
