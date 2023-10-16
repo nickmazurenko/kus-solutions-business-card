@@ -30,7 +30,7 @@ interface TextCardProps {
 
 const TextCard = (props: TextCardProps) => {
   return (
-    <div className='relative z-10 flex h-full w-full flex-col items-center justify-center gap-10 font-dongle text-secondary'>
+    <div className='relative z-10 flex h-full w-full flex-col items-center justify-center gap-10 px-10 font-dongle text-secondary'>
       <div className='flex flex-col items-center text-4xl font-bold md:text-7xl'>
         <div className='capitalize'>Integrate your website with</div>
         <div
@@ -111,11 +111,11 @@ export default function HomepageTechnologies(props: HomepageTechnologies) {
       className={`${className} relative flex h-screen w-full flex-col`}
     >
       <div className='spotlight spotlight-right'></div>
-      <div className='relative flex h-full w-full flex-col px-10 py-24'>
+      <div className='relative flex h-full w-full flex-col py-24 md:px-10'>
         <TextCard onMouseOver={onMouseOver} onMouseLeave={onMouseLeave} />
         <div
           ref={gridRef}
-          className='absolute top-0 z-0 grid h-full w-full grid-cols-3 items-center justify-items-center gap-20 brightness-[0.6] md:grid-cols-7'
+          className='absolute top-0 z-0 grid h-full w-full grid-cols-3 items-center justify-items-center gap-1 brightness-[0.6] md:grid-cols-7 md:gap-20'
         >
           {Array.from({ length: config.circlesNum }).map((_, index) => {
             if (index % 2 === 0) idx++;
@@ -123,8 +123,8 @@ export default function HomepageTechnologies(props: HomepageTechnologies) {
             return (
               <div
                 key={index}
-                className={`flex h-36 w-36 items-center justify-center overflow-clip rounded-full object-contain opacity-70
-          shadow-primary/50 ${index % 2 === 0 ? 'bg-primary shadow-xl' : 'shadow-none'}`}
+                className={`flex h-20 w-20 items-center justify-center overflow-clip rounded-full object-contain opacity-70 shadow-primary/50 md:h-36
+          md:w-36 ${index % 2 === 0 ? 'bg-primary shadow-xl' : 'shadow-none'}`}
               >
                 {index % 2 === 0 && (
                   <Image
