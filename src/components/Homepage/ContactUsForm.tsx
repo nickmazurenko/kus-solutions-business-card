@@ -8,9 +8,9 @@ export default function ContactUsForm(props: ContactUsFormProps) {
   const { className } = props;
   return (
     <div
-      className={`${className} flex h-full w-full flex-col items-center justify-center border-b-4 border-b-primary py-10 font-dongle text-secondary`}
+      className={`${className} flex h-full w-full flex-col items-center justify-center border-b-4 border-b-primary p-2 py-10 font-dongle text-secondary`}
     >
-      <div className='flex w-full flex-col items-center justify-center gap-5 rounded-3xl bg-gradient-to-br from-primary/30 p-5 py-14 shadow-blblur shadow-primary/50 md:w-3/4 lg:w-3/6'>
+      <div className='flex w-full flex-col items-center justify-center gap-5 rounded-3xl bg-gradient-to-br from-primary/30 p-5 py-14 md:w-3/4 md:shadow-blblur md:shadow-primary/50 lg:w-3/6'>
         <div className='w-full text-center text-5xl'>Contact Us</div>
         <div className='flex w-full flex-col gap-5 md:flex-row'>
           <div className='flex w-full flex-col gap-5 md:w-1/2'>

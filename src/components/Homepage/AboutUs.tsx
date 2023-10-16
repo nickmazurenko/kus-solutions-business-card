@@ -3,6 +3,21 @@ import './styles/text.css';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 
+const cards = [
+  {
+    image: '/assets/textPurple.png',
+    text: 'Non ex magna qui magna aliquip sunt eu reprehenderit. Mollit commodo amet quis exercitation non amet anim laboris. Veniam culpa excepteur ipsum id sint voluptate dolore eu ex laborum esse officia laboris ad.'
+  },
+  {
+    image: '/assets/textPurple1.png',
+    text: 'Magna nulla irure veniam tempor pariatur excepteur consectetur tempor esse.Sit occaecat culpa mollit Lorem consequat pariatur qui sunt nostrud nisi.'
+  },
+  {
+    image: '/assets/textCat.png',
+    text: 'Anim consectetur aute laborum commodo ullamco eiusmod ea id veniam fugiat nulla nostrud tempor.'
+  }
+];
+
 interface AboutUsProps {
   className?: string;
 }
@@ -16,7 +31,7 @@ interface CardProps {
 const Card = (props: CardProps) => {
   const { image, imageOnLeft = true, text } = props;
   return (
-    <div className='relative mx-10 flex min-h-full min-w-full flex-row items-center justify-between py-5'>
+    <div className='relative flex min-h-full min-w-full flex-row items-center justify-between py-5 md:mx-10'>
       <Image
         alt='aboutus-image'
         className={`absolute bottom-0 hidden h-[200px] w-auto md:block ${
@@ -64,28 +79,15 @@ export default function HomepageAboutUs(props: AboutUsProps) {
       <div className='w-full pb-5 text-center font-dongle text-5xl text-secondary md:hidden'>
         About Us
       </div>
-      <div className='flex h-full w-full flex-col items-center justify-center gap-10 self-center rounded-3xl bg-primary/20 p-10 md:w-1/2'>
-        <Card
-          text={
-            'Non ex magna qui magna aliquip sunt eu reprehenderit. Mollit commodo amet quis exercitation non amet anim laboris. Veniam culpa excepteur ipsum id sint voluptate dolore eu ex laborum esse officia laboris ad.'
-          }
-          image='/assets/textPurple.png'
-        />
-        <div className='w-full border-b-4 border-primary md:w-3/4'></div>
-        <Card
-          imageOnLeft={false}
-          text={
-            'Magna nulla irure veniam tempor pariatur excepteur consectetur tempor esse.Sit occaecat culpa mollit Lorem consequat pariatur qui sunt nostrud nisi.'
-          }
-          image='/assets/textPurple1.png'
-        />
-        <div className='w-full border-b-4 border-primary md:w-3/4'></div>
-        <Card
-          text={
-            'Anim consectetur aute laborum commodo ullamco eiusmod ea id veniam fugiat nulla nostrud tempor.'
-          }
-          image='/assets/textCat.png'
-        />
+      <div className='flex h-full w-full flex-col items-center justify-center gap-10 self-center rounded-3xl bg-primary/20 p-5 md:w-1/2 md:p-10'>
+        {cards.map((card, index) => (
+          <>
+            <Card text={card.text} image={card.image} imageOnLeft={index % 2 === 0} key={index} />
+            {index + 1 < cards.length && (
+              <div className='w-full border-b-4 border-primary md:w-3/4'></div>
+            )}
+          </>
+        ))}
       </div>
     </div>
   );

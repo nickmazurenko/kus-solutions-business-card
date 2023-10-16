@@ -7,6 +7,17 @@ import './styles/text.css';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger from gsap
 gsap.registerPlugin(ScrollTrigger);
 
+const reviews = [
+  {
+    image: '/assets/catPurple.png',
+    text: 'Officia pariatur consequat voluptate dolore sint eiusmod mollit exercitation commodo. Ex in elit tempor irure quis officia ea et cupidatat proident aute sunt incididunt eiusmod. Aute cillum proident commodo irure. Ullamco ea dolor exercitation aute ipsum est laboris est veniam eiusmod occaecat et velit minim.Aute officia laboris fugiat labore commodo eu irure ad tempor eu pariatur eiusmod. Deserunt ea adipisicing incididunt veniam irure do aliqua Lorem reprehenderit reprehenderit labore proident. Ut ipsum laborum consequat sit tempor.'
+  },
+  {
+    image: '/assets/catPurple.png',
+    text: 'Officia pariatur consequat voluptate dolore sint eiusmod mollit exercitation commodo. Ex in elit tempor irure quis officia ea et cupidatat proident aute sunt incididunt eiusmod. Aute cillum proident commodo irure.'
+  }
+];
+
 interface CarouselSlideProps {
   text: string;
   image: string;
@@ -24,7 +35,7 @@ const CarouselSlide = (props: CarouselSlideProps) => {
   const { text, image } = props;
   return (
     <div className='pointer-events-none h-full w-full p-5 md:p-10 md:px-20'>
-      <div className='flex h-full w-full flex-col items-center justify-between gap-5 rounded-xl bg-primary/25 p-5 py-10 shadow-blblur shadow-primary md:flex-row'>
+      <div className='flex h-full w-full flex-col items-center justify-between gap-5 rounded-xl bg-primary/25 p-5 py-10 shadow-primary md:flex-row md:shadow-blblur'>
         <div className='relative flex h-auto min-h-fit min-w-fit items-center justify-center rounded-2xl bg-primary md:w-1/4'>
           <Image
             src={image}
@@ -34,7 +45,7 @@ const CarouselSlide = (props: CarouselSlideProps) => {
             alt='slide-image'
           />
         </div>
-        <div className='md:w-4/3 max-h-24 overflow-hidden text-ellipsis break-words text-justify font-dongle text-3xl text-gray-300'>
+        <div className='md:w-4/3 line-clamp-5 break-words text-justify font-dongle text-3xl text-gray-300'>
           {text}
         </div>
       </div>
@@ -88,14 +99,9 @@ export default function HomepageReviews(props: ReviewsProps) {
         rightControl={<CarouselControl className='rotate-90' />}
         className=''
       >
-        <CarouselSlide
-          image='/assets/catPurple.png'
-          text='Aute officia laboris fugiat labore commodo eu irure ad tempor eu pariatur eiusmod. Deserunt ea adipisicing incididunt veniam irure do aliqua Lorem reprehenderit reprehenderit labore proident. Ut ipsum laborum consequat sit tempor.'
-        />
-        <CarouselSlide
-          image='/assets/catPurple.png'
-          text='Officia pariatur consequat voluptate dolore sint eiusmod mollit exercitation commodo. Ex in elit tempor irure quis officia ea et cupidatat proident aute sunt incididunt eiusmod. Aute cillum proident commodo irure. Ullamco ea dolor exercitation aute ipsum est laboris est veniam eiusmod occaecat et velit minim.Aute officia laboris fugiat labore commodo eu irure ad tempor eu pariatur eiusmod. Deserunt ea adipisicing incididunt veniam irure do aliqua Lorem reprehenderit reprehenderit labore proident. Ut ipsum laborum consequat sit tempor.'
-        />
+        {reviews.map((review, index) => (
+          <CarouselSlide image={review.image} text={review.text} key={index} />
+        ))}
       </Carousel>
     </div>
   );

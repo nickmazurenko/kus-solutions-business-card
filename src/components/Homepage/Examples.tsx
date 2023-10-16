@@ -56,7 +56,7 @@ const ExampleCard = (props: ExampleCardProps) => {
         }}
         className={`${
           hover ? 'from-primary/80' : 'from-primary/40 '
-        } shadow-tl flex min-h-[180px] w-full items-center justify-center overflow-hidden rounded-3xl  bg-gradient-to-br object-cover shadow-primary transition-colors delay-1000 md:min-h-[200px]`}
+        } flex min-h-[180px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br  object-cover shadow-tl shadow-primary transition-colors delay-1000 md:min-h-[200px]`}
       >
         <Image
           alt='example-image'
@@ -65,7 +65,7 @@ const ExampleCard = (props: ExampleCardProps) => {
           height={500}
           className={`${
             hover ? '-rotate-6' : ''
-          } shadow-repeat h-auto w-full -rotate-12 transform object-contain shadow-primary/20 duration-200 md:w-4/5 md:translate-y-10`}
+          } h-auto w-full -rotate-12 transform object-contain shadow-repeat shadow-primary/20 duration-200 md:w-4/5 md:translate-y-10`}
         />
       </div>
       <div className='flex flex-wrap gap-2 self-start'>
@@ -101,7 +101,7 @@ export default function HomepageExamples(props: ExamplesProps) {
   }, []);
   return (
     <div
-      className={`${className} relative flex h-full w-full flex-col items-center justify-center gap-10 p-10`}
+      className={`${className} relative flex h-full w-full flex-col items-center justify-center gap-10 p-5 md:p-10`}
     >
       <div className='font-dongle text-5xl  uppercase text-secondary'>Examples</div>
       <div
