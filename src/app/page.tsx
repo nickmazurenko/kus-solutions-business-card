@@ -8,6 +8,7 @@ import HomepageTechnologies from '@/components/Homepage/Technologies';
 import HomepageFooter from '@/components/Homepage/Footer';
 import HomepageAboutUs from '@/components/Homepage/AboutUs';
 import HomepageExamples from '@/components/Homepage/Examples';
+import ContactUsForm from '@/components/Homepage/ContactUsForm';
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
@@ -24,6 +25,7 @@ export default function Home() {
           <HomepageExamples />
           <HomepageTechnologies />
           <HomepageAboutUs />
+          <ContactUsForm />
           <HomepageFooter />
         </div>
       )}
