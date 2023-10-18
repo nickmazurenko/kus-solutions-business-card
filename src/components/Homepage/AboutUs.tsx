@@ -40,6 +40,7 @@ const Card = (props: CardProps) => {
         src={image}
         width={500}
         height={500}
+        draggable={false}
       />
       <div className='text-justify text-gray-300'>{text}</div>
     </div>
