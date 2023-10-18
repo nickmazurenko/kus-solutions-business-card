@@ -1,12 +1,26 @@
+import { Tooltip } from 'flowbite-react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { PiInstagramLogo, PiLinkedinLogo, PiTelegramLogo, PiTiktokLogo } from 'react-icons/pi';
+import {
+  PiCheckCircleBold,
+  PiEnvelopeSimpleBold,
+  PiInstagramLogo,
+  PiLinkedinLogo,
+  PiPhoneBold,
+  PiTelegramLogo,
+  PiTiktokLogo
+} from 'react-icons/pi';
 
 interface HomepageFooterProps {
   className?: string;
 }
+
+const contacts = {
+  email: 'long.exapmle@gmail.com',
+  number: '+38 (022) 222-22-22'
+};
 
 export default function HomepageFooter(props: HomepageFooterProps) {
   const { className } = props;
@@ -65,8 +79,8 @@ export default function HomepageFooter(props: HomepageFooterProps) {
       <span className='cursor-default self-center font-dongle text-5xl text-primary md:self-start md:px-20'>
         Service
       </span>
-      <div className='flex w-full flex-row-reverse items-center justify-between font-dongle text-3xl text-secondary md:flex-row md:px-20'>
-        <div className='flex flex-col text-end md:text-start'>
+      <div className='flex w-full flex-col-reverse items-center justify-between font-dongle text-3xl text-secondary md:flex-row md:px-20'>
+        <div className='hidden w-full flex-col md:flex md:text-start'>
           <div
             onClick={() => {
               setSectionId('#technologies');
@@ -100,12 +114,50 @@ export default function HomepageFooter(props: HomepageFooterProps) {
             About Us
           </div>
         </div>
-        <div className='flex flex-col'>
-          <span className='underline'>Email</span>
-          <span>Number</span>
+        <div className='flex w-full flex-col md:items-end'>
+          <Tooltip
+            placement='left'
+            trigger='click'
+            className='bg-gradient-to-br from-primary px-2 py-0'
+            content={
+              <div className='flex items-center justify-center gap-1 font-dongle text-xl'>
+                <PiCheckCircleBold />
+                <span className=' text-2xl'>Copied!</span>
+              </div>
+            }
+          >
+            <div
+              className='flex cursor-pointer flex-row-reverse items-center gap-2 hover:text-primary'
+              onClick={() => {
+                navigator.clipboard.writeText(contacts.email);
+              }}
+            >
+              <PiEnvelopeSimpleBold /> {contacts.email}
+            </div>
+          </Tooltip>
+          <Tooltip
+            placement='left'
+            trigger='click'
+            className='bg-gradient-to-br from-primary px-2 py-0'
+            content={
+              <div className='flex items-center justify-center gap-1 font-dongle text-xl'>
+                <PiCheckCircleBold />
+                <span className=' text-2xl'>Copied!</span>
+              </div>
+            }
+          >
+            <div
+              className='flex cursor-pointer flex-row-reverse items-center gap-2 decoration-primary  hover:underline'
+              onClick={() => {
+                navigator.clipboard.writeText(contacts.number);
+              }}
+            >
+              <PiPhoneBold /> {contacts.number}
+            </div>
+          </Tooltip>
           <div className='cursor-default opacity-0'>placeholder</div>
           <div
-            className='flex cursor-pointer flex-row '
+            className='flex cursor-pointer flex-row-reverse items-center self-end text-end'
             onClick={() => {
               setSectionId('#banner');
             }}
