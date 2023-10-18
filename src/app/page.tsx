@@ -21,9 +21,9 @@ export default function Home() {
         <div className='flex h-full w-full flex-col gap-5'>
           <HomepageHeader />
           <HomepageBanner className='mt-52' />
-          <HomepageReviews />
           <HomepageExamples />
           <HomepageTechnologies />
+          <HomepageReviews />
           <HomepageAboutUs />
           <ContactUsForm />
           <HomepageFooter />

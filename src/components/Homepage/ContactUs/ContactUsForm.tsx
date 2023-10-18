@@ -1,10 +1,10 @@
-import { ChangeEvent, useState } from 'react';
 import checkContactData, { ContactUsFormErrors } from '@/lib/contactFormValidation';
 import emailjs from '@emailjs/browser';
+import { ChangeEvent, useState } from 'react';
+import Failure from './Failure';
 import Form from './Form';
 import Loader from './Loader';
 import Success from './Success';
-import Failure from './Failure';
 
 const initialFormData: ContactUsFormData = {
   fullName: '',
@@ -66,7 +66,8 @@ export default function ContactUsForm(props: ContactUsFormProps) {
 
   return (
     <div
-      className={`${className} relative flex h-full w-full flex-col items-center justify-center border-b-4 border-b-primary p-2 py-10 font-dongle text-secondary`}
+      id='contactUs'
+      className={`${className} relative flex h-full w-full flex-col items-center justify-center border-b-4 border-b-primary p-2 py-10 pb-16 font-dongle text-secondary`}
     >
       <div className='spotlight spotlight-left'></div>
       {showForm && <Form onChange={onChange} onSend={onSend} formErrors={formErrors} />}

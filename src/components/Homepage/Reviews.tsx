@@ -1,10 +1,10 @@
 import { Carousel } from 'flowbite-react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { PiControlBold } from 'react-icons/pi';
-import { gsap } from 'gsap';
 import './styles/text.css';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger from gsap
 gsap.registerPlugin(ScrollTrigger);
 
 const reviews = [
@@ -76,9 +76,7 @@ export default function HomepageReviews(props: ReviewsProps) {
   }, []);
 
   return (
-    <div
-      className={`${className} relative flex h-full w-full flex-col border-b-4 border-primary py-10`}
-    >
+    <div id='reviews' className={`${className} relative flex h-full w-full flex-col py-10`}>
       <div className='spotlight spotlight-left'></div>
       <div className='relative hidden w-full items-center justify-center px-10 py-16 font-dongle text-5xl text-secondary md:flex'>
         <div

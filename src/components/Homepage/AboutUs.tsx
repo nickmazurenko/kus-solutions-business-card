@@ -1,8 +1,7 @@
-import { useEffect, useRef } from 'react';
-import './styles/text.css';
 import { gsap } from 'gsap';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import './styles/text.css';
 
 const cards = [
   {
@@ -65,6 +64,7 @@ export default function HomepageAboutUs(props: AboutUsProps) {
   }, []);
   return (
     <div
+      id='aboutUs'
       className={`${className} relative flex w-full flex-col border-b-4 border-primary p-5 py-16 md:px-0`}
     >
       <div className='spotlight spotlight-left'></div>

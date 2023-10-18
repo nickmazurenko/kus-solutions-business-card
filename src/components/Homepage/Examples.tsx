@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import { gsap } from 'gsap';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 const examples = [
   {
@@ -101,6 +101,7 @@ export default function HomepageExamples(props: ExamplesProps) {
   }, []);
   return (
     <div
+      id='examples'
       className={`${className} relative flex h-full w-full flex-col items-center justify-center gap-10 p-5 md:p-10`}
     >
       <div className='font-dongle text-5xl  uppercase text-secondary'>Examples</div>

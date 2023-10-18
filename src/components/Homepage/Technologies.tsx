@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import OrderNowButton from '../buttons/OrderNowButton';
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import OrderNowButton from '../buttons/OrderNowButton';
 
 // technologies logos
 const logos = [
@@ -102,6 +102,7 @@ export default function HomepageTechnologies(props: HomepageTechnologies) {
 
   return (
     <div
+      id='technologies'
       onMouseEnter={() => {
         setHovered(true);
       }}
