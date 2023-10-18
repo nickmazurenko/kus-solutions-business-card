@@ -30,6 +30,7 @@ export default function ImageBanner({ className }: { className?: string }) {
           className={`z-0 h-full w-full object-contain opacity-0 md:w-auto`}
           alt='banner-image'
           src='/assets/textPurple.png'
+          priority
           width={1000}
           height={1000}
         />
@@ -42,6 +43,7 @@ export default function ImageBanner({ className }: { className?: string }) {
           className={`z-0 h-full w-full object-contain md:w-auto`}
           alt='banner-image'
           src='/assets/catPurple.png'
+          priority
           width={1000}
           height={1000}
         />

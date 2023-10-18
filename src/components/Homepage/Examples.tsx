@@ -106,11 +106,11 @@ export default function HomepageExamples(props: ExamplesProps) {
       <div className='font-dongle text-5xl  uppercase text-secondary'>Examples</div>
       <div
         ref={bgTextRef}
-        className='text-shadow absolute z-0 hidden -rotate-90 transform text-start text-[100px] uppercase tracking-wider  text-background brightness-50  lg:block lg:text-[80px] '
+        className='text-shadow absolute z-0 hidden -rotate-90 transform text-start text-[80px] uppercase tracking-wider  text-background brightness-50  lg:block lg:text-[80px] '
       >
         featured projects
       </div>
-      <div className='flex h-full w-full flex-wrap items-center justify-around gap-5'>
+      <div className='z-30 flex h-full w-full flex-wrap items-center justify-around gap-5'>
         {examples.map((example, index) => (
           <ExampleCard
             image={example.image}
