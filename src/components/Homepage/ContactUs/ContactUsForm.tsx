@@ -42,9 +42,13 @@ export default function ContactUsForm(props: ContactUsFormProps) {
     } else {
       setShowForm(false);
       setLoading(true);
-      emailjs.init(process.env.EMAILJS_PUBLIC_KEY as string);
+      emailjs.init(process.env.emailjsPublicKey as string);
       emailjs
-        .send('service_kifd2sn', 'template_7dt6fo7', formData as unknown as Record<string, unknown>)
+        .send(
+          process.env.emailjsServiceId as string,
+          process.env.emailjsTemplateId as string,
+          formData as unknown as Record<string, unknown>
+        )
         .then(
           function (response) {
             setLoading(false);
