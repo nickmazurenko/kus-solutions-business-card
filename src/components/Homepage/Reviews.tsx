@@ -34,7 +34,7 @@ const CarouselControl = ({ className }: { className: string }) => {
 const CarouselSlide = (props: CarouselSlideProps) => {
   const { text, image } = props;
   return (
-    <div className='pointer-events-none h-full w-full p-5 md:p-10 md:px-20'>
+    <div className='pointer-events-none h-full w-full p-2 md:p-10 md:px-20'>
       <div className='flex h-full w-full flex-col items-center justify-between gap-5 rounded-xl bg-primary/25 p-5 py-10 shadow-primary md:flex-row md:shadow-blblur'>
         <div className='relative flex h-auto min-h-fit min-w-fit items-center justify-center rounded-2xl bg-primary md:w-1/4'>
           <Image

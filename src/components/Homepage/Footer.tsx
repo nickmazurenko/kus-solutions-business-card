@@ -114,7 +114,7 @@ export default function HomepageFooter(props: HomepageFooterProps) {
             About Us
           </div>
         </div>
-        <div className='flex w-full flex-col md:items-end'>
+        <div className='flex w-full flex-col items-center justify-center md:items-end'>
           <Tooltip
             placement='left'
             trigger='click'
@@ -127,7 +127,7 @@ export default function HomepageFooter(props: HomepageFooterProps) {
             }
           >
             <div
-              className='flex cursor-pointer flex-row-reverse items-center gap-2 hover:text-primary'
+              className='flex cursor-pointer flex-row items-center gap-2 hover:text-primary md:flex-row-reverse'
               onClick={() => {
                 navigator.clipboard.writeText(contacts.email);
               }}
@@ -147,7 +147,7 @@ export default function HomepageFooter(props: HomepageFooterProps) {
             }
           >
             <div
-              className='flex cursor-pointer flex-row-reverse items-center gap-2 decoration-primary  hover:underline'
+              className='flex cursor-pointer flex-row items-center gap-2 decoration-primary hover:underline  md:flex-row-reverse'
               onClick={() => {
                 navigator.clipboard.writeText(contacts.number);
               }}

@@ -8,7 +8,14 @@ const logos = [
   '/assets/techLogos/reactLogo.png',
   '/assets/techLogos/nextLogo.png',
   '/assets/techLogos/materialLogo.png',
-  '/assets/techLogos/tailwindLogo.png'
+  '/assets/techLogos/tailwindLogo.png',
+  '/assets/techLogos/mongoLogo.png',
+  '/assets/techLogos/postgreLogo.png',
+  '/assets/techLogos/dockerLogo.png',
+  '/assets/techLogos/nodeLogo.png',
+  '/assets/techLogos/typescriptLogo.png',
+  '/assets/techLogos/shopifyLogo.png',
+  '/assets/techLogos/telegrafLogo.png'
 ];
 
 const config = {
@@ -34,7 +41,7 @@ const TextCard = (props: TextCardProps) => {
       <div className='flex flex-col items-center text-4xl font-bold md:text-7xl'>
         <div className='capitalize'>Integrate your website with</div>
         <div
-          className='rounded-2xl bg-primary/40 p-3 backdrop-blur-sm hover:bg-primary'
+          className='cursor-default rounded-2xl bg-primary/40 p-3 backdrop-blur-sm hover:bg-primary'
           onMouseEnter={props.onMouseOver}
           onMouseLeave={props.onMouseLeave}
         >
@@ -116,7 +123,7 @@ export default function HomepageTechnologies(props: HomepageTechnologies) {
         <TextCard onMouseOver={onMouseOver} onMouseLeave={onMouseLeave} />
         <div
           ref={gridRef}
-          className='absolute top-0 z-0 grid h-full w-full grid-cols-3 items-center justify-items-center gap-1 brightness-[0.6] md:grid-cols-7 md:gap-20'
+          className='absolute top-0 z-0 grid h-full w-full grid-cols-3 items-center justify-items-center gap-1 brightness-[0.4] md:grid-cols-7 md:gap-20'
         >
           {Array.from({ length: config.circlesNum }).map((_, index) => {
             if (index % 2 === 0) idx++;
@@ -125,13 +132,13 @@ export default function HomepageTechnologies(props: HomepageTechnologies) {
               <div
                 key={index}
                 className={`flex h-20 w-20 items-center justify-center overflow-clip rounded-full object-contain opacity-70 shadow-primary/50 md:h-36
-          md:w-36 ${index % 2 === 0 ? 'bg-primary shadow-xl' : 'shadow-none'}`}
+          md:w-36 ${index % 2 === 0 ? ' shadow-xl' : 'shadow-none'}`}
               >
                 {index % 2 === 0 && (
                   <Image
                     src={logos[idx % logos.length]}
-                    width={120}
-                    height={120}
+                    width={500}
+                    height={500}
                     alt='tech-image'
                   />
                 )}

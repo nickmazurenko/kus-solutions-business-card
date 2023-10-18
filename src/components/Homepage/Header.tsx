@@ -82,19 +82,19 @@ export default function HomepageHeader() {
         <Navbar.Collapse>
           <div
             onClick={() => {
-              setSectionId('#technologies');
-            }}
-            className={`cursor-pointer p-2 text-xl text-secondary hover:text-primary md:p-0 md:text-base `}
-          >
-            Technologies
-          </div>
-          <div
-            onClick={() => {
               setSectionId('#examples');
             }}
             className={`cursor-pointer p-2 text-xl text-secondary hover:text-primary md:p-0 md:text-base `}
           >
             Examples
+          </div>
+          <div
+            onClick={() => {
+              setSectionId('#technologies');
+            }}
+            className={`cursor-pointer p-2 text-xl text-secondary hover:text-primary md:p-0 md:text-base `}
+          >
+            Technologies
           </div>
           <div
             onClick={() => {
