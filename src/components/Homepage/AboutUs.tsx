@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import './styles/text.css';
 import { gsap } from 'gsap';
 import Image from 'next/image';
+import React from 'react';
 
 const cards = [
   {
@@ -81,12 +82,12 @@ export default function HomepageAboutUs(props: AboutUsProps) {
       </div>
       <div className='flex h-full w-full flex-col items-center justify-center gap-10 self-center rounded-3xl bg-primary/20 p-5 md:w-1/2 md:p-10'>
         {cards.map((card, index) => (
-          <>
-            <Card text={card.text} image={card.image} imageOnLeft={index % 2 === 0} key={index} />
+          <React.Fragment key={index}>
+            <Card text={card.text} image={card.image} imageOnLeft={index % 2 === 0} />
             {index + 1 < cards.length && (
               <div className='w-full border-b-4 border-primary md:w-3/4'></div>
             )}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </div>
