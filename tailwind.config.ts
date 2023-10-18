@@ -26,6 +26,20 @@ const config: Config = {
         blblur: '-5px 5px 10px 2px',
         tl: '-2px -2px 0px 2px',
         repeat: '-20px 20px 0px 2px, -40px 40px 0px 2px'
+      },
+      keyframes: {
+        appear: {
+          '0%': { opacity: '0', transform: 'scale(0.7)' },
+          '100%': { opacity: '1', transform: 'scale(1)' }
+        },
+        slow: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
+        }
+      },
+      animation: {
+        appear: 'appear 1s forwards',
+        slow: 'slow 1s forwards'
       }
     }
   },
