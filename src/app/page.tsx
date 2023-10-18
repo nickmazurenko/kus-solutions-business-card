@@ -8,7 +8,7 @@ import HomepageTechnologies from '@/components/Homepage/Technologies';
 import HomepageFooter from '@/components/Homepage/Footer';
 import HomepageAboutUs from '@/components/Homepage/AboutUs';
 import HomepageExamples from '@/components/Homepage/Examples';
-import ContactUsForm from '@/components/Homepage/ContactUsForm';
+import ContactUsForm from '@/components/Homepage/ContactUs/ContactUsForm';
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
