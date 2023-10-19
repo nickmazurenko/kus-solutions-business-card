@@ -1,6 +1,9 @@
 import DoubleButton from '@/components/buttons/DoubleButton';
 import { ContactUsFormErrors } from '@/lib/contactFormValidation';
 import { ChangeEvent } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import './styles/phoneInput.css';
 
 export default function Form({
   formErrors,
@@ -42,13 +45,16 @@ export default function Form({
         </div>
         <div className='flex w-full flex-col gap-5 md:flex-row'>
           <div className='flex w-full flex-col md:w-1/2'>
-            <input
-              className={`${
-                formErrors.phone ? 'border-2 border-red-700' : ''
-              } rounded-xl bg-primary/60 p-1 px-5 text-2xl placeholder:h-full placeholder:text-2xl placeholder:text-secondary/70 focus:border-primary focus:outline-none focus:ring-0`}
-              placeholder='Phone Number(optional)'
-              name='number'
-              onChange={onChange}
+            <PhoneInput
+              inputClass='phone-input'
+              buttonClass='phone-input-button'
+              dropdownStyle={{ backgroundColor: 'rgba(var(--primary--rgb), 0.6)' }}
+              onChange={(value) => {
+                onChange({ target: { name: 'phone', value: value } } as unknown as ChangeEvent<
+                  HTMLInputElement | HTMLTextAreaElement
+                >);
+              }}
+              country={'ua'}
             />
             <span className='px-2 text-lg text-red-700'>{formErrors.phone}</span>
           </div>
