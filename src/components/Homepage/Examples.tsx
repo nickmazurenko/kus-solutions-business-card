@@ -79,6 +79,7 @@ const ExampleCard = (props: ExampleCardProps) => {
       <div className='line-clamp-3 w-full break-words text-justify font-dongle text-2xl text-gray-300'>
         {text}
       </div>
+      <div className='block w-1/2 border-b-4 border-primary md:hidden'></div>
     </div>
   );
 };
@@ -111,7 +112,7 @@ export default function HomepageExamples(props: ExamplesProps) {
       >
         featured projects
       </div>
-      <div className='z-30 flex h-full w-full flex-wrap items-center justify-around gap-5'>
+      <div className='z-30 flex h-full w-full flex-wrap items-center justify-around gap-10'>
         {examples.map((example, index) => (
           <ExampleCard
             image={example.image}

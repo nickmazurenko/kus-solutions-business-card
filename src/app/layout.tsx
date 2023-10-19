@@ -9,15 +9,13 @@ const dongle = Dongle({ variable: '--font-dongle', weight: '400', subsets: ['lat
 export const metadata: Metadata = {
   title: "Kus' Solutions",
   description: "Websites with a Kus'tom touch",
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'
+  viewport: 'width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={`overflow-x-hidden ${inter.className} ${coiny.variable} ${dongle.variable}`}>
-        {children}
-      </body>
+      <body className={`${inter.className} ${coiny.variable} ${dongle.variable}`}>{children}</body>
     </html>
   );
 }

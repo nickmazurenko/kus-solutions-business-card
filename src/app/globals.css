@@ -19,8 +19,14 @@
   }
 }
 
+html {
+  overflow-x: clip;
+  overflow-y: auto;
+}
+
 body {
-  overflow-x: hidden;
+  position: relative;
+  overflow-x: clip;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

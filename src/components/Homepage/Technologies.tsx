@@ -60,7 +60,7 @@ export default function HomepageTechnologies(props: HomepageTechnologies) {
   const { className } = props;
   const [hovered, setHovered] = useState(false);
   const gridRef = useRef<HTMLDivElement | null>(null);
-  // Starting index for logos
+  // Starting index for logos images
   // It is minus one cause it updates on drawing each even circle
   let idx = -1;
 
@@ -83,9 +83,9 @@ export default function HomepageTechnologies(props: HomepageTechnologies) {
           ease: 'none'
         });
       };
-
-      if (hovered) window.addEventListener('mousemove', updateParallax);
-
+      if (window.innerWidth >= 500) {
+        if (hovered) window.addEventListener('mousemove', updateParallax);
+      }
       return () => {
         window.removeEventListener('mousemove', updateParallax);
       };
