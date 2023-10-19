@@ -1,0 +1,34 @@
+.spotlight {
+  position: relative; /* Ensure the position is relative */
+  /* Other styles for the element */
+}
+
+/* Create a small circle shadow using a pseudo-element */
+.spotlight-right {
+  content: '';
+  position: absolute;
+  filter: blur(192px);
+  top: 0; /* Position at the top */
+  right: 0; /* Position at the right */
+  width: 300px; /* Adjust the size of the circle */
+  height: 300px; /* Adjust the size of the circle */
+  background: rgba(217, 0, 255, 0.5); /* Shadow color (adjust the opacity as needed) */
+  border-radius: 50%; /* Create a circular shape */
+  box-shadow: 0 0 10px rgba(217, 0, 255, 0.5); /* Shadow effect (adjust as needed) */
+  transform: translate(200px, -20%); /* Position the circle diagonally on the top right */
+}
+
+.spotlight-left {
+  content: '';
+  z-index: -10;
+  position: absolute;
+  filter: blur(192px);
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the right */
+  width: 300px; /* Adjust the size of the circle */
+  height: 300px; /* Adjust the size of the circle */
+  background: rgba(217, 0, 255, 0.5); /* Shadow color (adjust the opacity as needed) */
+  border-radius: 50%; /* Create a circular shape */
+  box-shadow: 0 0 10px rgba(217, 0, 255, 0.5); /* Shadow effect (adjust as needed) */
+  transform: translate(-20%, 100%); /* Position the circle diagonally on the top right */
+}

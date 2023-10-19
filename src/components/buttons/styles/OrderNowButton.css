@@ -1,0 +1,39 @@
+.box {
+  transform-style: preserve-3d;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.box:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.shadow:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translate3d(10px, 10px, -1px);
+  background: conic-gradient(
+    from 90deg at 40% -25%,
+    #6a0dad,
+    #7a1dc6,
+    #8b2ddf,
+    #9c3df8,
+    #ae4eff,
+    #c15fff,
+    #d371ff,
+    #e483ff,
+    #d371ff,
+    #c15fff,
+    #ae4eff,
+    #9c3df8,
+    #8b2ddf,
+    #7a1dc6,
+    #6a0dad,
+    #6a0dad,
+    #6a0dad
+  );
+  border-radius: 15px;
+  filter: blur(1px);
+}
