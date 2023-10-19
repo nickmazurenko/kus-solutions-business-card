@@ -1,0 +1,38 @@
+.react-tel-input .phone-input {
+  background-color: rgba(var(--primary--rgb), 0.6);
+  width: 100%;
+  border-radius: 10px;
+  height: 38px;
+  border: none;
+}
+
+.react-tel-input .phone-input::placeholder {
+  color: rgba(var(--secondary--rgb), 0.5);
+}
+
+.react-tel-input .phone-input-button {
+  border-radius: 5px;
+  background-color: var(--primary);
+  border: none;
+}
+
+.flag-dropdown .selected-flag {
+  border-radius: 5px;
+  background-color: var(--primary) !important;
+}
+
+.react-tel-input .country-list .country.highlight,
+.country:hover,
+.flag-dropdown.open .selected-flag,
+.flag-dropdown .selected-flag:active,
+.flag-dropdown .selected-flag:hover {
+  background-color: var(--primary) !important;
+}
+
+.country-list .country .dial-code {
+  color: var(--secondary) !important;
+}
+
+.flag .arrow {
+  display: none;
+}
