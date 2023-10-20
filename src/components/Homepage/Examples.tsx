@@ -1,33 +1,7 @@
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-
-const examples = [
-  {
-    image: '/assets/test.png',
-    text: 'Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.',
-    title: 'Website Name',
-    tags: ['smth', 'another tag', 'something else']
-  },
-  {
-    image: '/assets/test.png',
-    text: 'Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.',
-    title: 'Website Name',
-    tags: ['smth', 'another tag', 'something else']
-  },
-  {
-    image: '/assets/test.png',
-    text: 'Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.',
-    title: 'Website Name',
-    tags: ['smth', 'another tag', 'something else']
-  },
-  {
-    image: '/assets/test.png',
-    text: 'Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.',
-    title: 'Website Name',
-    tags: ['smth', 'another tag', 'something else']
-  }
-];
+import examples from '@/data/examples.json';
 
 interface ExamplesProps {
   className?: string;
@@ -45,7 +19,7 @@ const ExampleCard = (props: ExampleCardProps) => {
   const [hover, setHover] = useState(false);
   return (
     <div
-      className={`${className} flex w-full flex-col items-center justify-center gap-5 text-secondary md:h-[500px] md:w-[600px]`}
+      className={`${className} relative flex w-full flex-col items-center justify-center gap-5 text-secondary md:h-[500px] md:w-[600px]`}
     >
       <div
         onMouseEnter={() => {
@@ -105,6 +79,7 @@ export default function HomepageExamples(props: ExamplesProps) {
       id='examples'
       className={`${className} relative flex h-full w-full flex-col items-center justify-center gap-10 p-5 md:p-10`}
     >
+      <div className='spotlight spotlight-left'></div>
       <div className='font-dongle text-5xl  uppercase text-secondary'>Examples</div>
       <div
         ref={bgTextRef}

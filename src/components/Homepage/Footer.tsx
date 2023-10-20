@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import contacts from '@/data/contacts.json';
 import {
   PiCheckCircleBold,
   PiEnvelopeSimpleBold,
@@ -16,11 +17,6 @@ import {
 interface HomepageFooterProps {
   className?: string;
 }
-
-const contacts = {
-  email: 'long.exapmle@gmail.com',
-  number: '+38 (022) 222-22-22'
-};
 
 export default function HomepageFooter(props: HomepageFooterProps) {
   const { className } = props;

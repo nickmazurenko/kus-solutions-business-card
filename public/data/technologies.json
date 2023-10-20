@@ -1,0 +1,16 @@
+{
+  "logos": [
+    "/assets/techLogos/reactLogo.png",
+    "/assets/techLogos/nextLogo.png",
+    "/assets/techLogos/materialLogo.png",
+    "/assets/techLogos/tailwindLogo.png",
+    "/assets/techLogos/mongoLogo.png",
+    "/assets/techLogos/postgreLogo.png",
+    "/assets/techLogos/dockerLogo.png",
+    "/assets/techLogos/nodeLogo.png",
+    "/assets/techLogos/typescriptLogo.png",
+    "/assets/techLogos/shopifyLogo.png",
+    "/assets/techLogos/telegrafLogo.png"
+  ],
+  "technologiesText": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum dolores minima quo soluta iste amet cumque necessitatibus laborum quidem id laudantium, repellat consequatur, eius dolor ad tenetur rem, dolorem corrupti!"
+}
