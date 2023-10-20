@@ -1,7 +1,7 @@
+import examples from '@/data/examples.json';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import examples from '@/data/examples.json';
 
 interface ExamplesProps {
   className?: string;

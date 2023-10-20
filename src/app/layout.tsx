@@ -1,6 +1,6 @@
-import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Coiny, Dongle } from 'next/font/google';
+import { Coiny, Dongle, Inter } from 'next/font/google';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 const coiny = Coiny({ variable: '--font-coiny', weight: '400', subsets: ['latin'] });

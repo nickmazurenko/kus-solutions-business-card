@@ -1,3 +1,4 @@
+import reviews from '@/data/reviews.json';
 import { Carousel } from 'flowbite-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -5,7 +6,6 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { PiControlBold } from 'react-icons/pi';
 import './styles/text.css';
-import reviews from '@/data/reviews.json';
 
 gsap.registerPlugin(ScrollTrigger);
 

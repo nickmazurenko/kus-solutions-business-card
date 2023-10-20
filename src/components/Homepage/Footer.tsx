@@ -1,9 +1,9 @@
+import contacts from '@/data/contacts.json';
 import { Tooltip } from 'flowbite-react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import contacts from '@/data/contacts.json';
 import {
   PiCheckCircleBold,
   PiEnvelopeSimpleBold,

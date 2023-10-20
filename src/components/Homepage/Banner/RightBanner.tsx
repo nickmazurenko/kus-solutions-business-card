@@ -1,5 +1,5 @@
-import HomepageTextCard from './TextCard';
 import banner from '@/data/banner.json';
+import HomepageTextCard from './TextCard';
 
 // TODO: upload json with text
 export default function RightBanner({ className }: { className?: string }) {

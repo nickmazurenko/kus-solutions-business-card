@@ -1,9 +1,9 @@
 import { Navbar } from 'flowbite-react';
-import ContactUsButton from '../buttons/ContactUsButton';
-import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/all';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import ContactUsButton from '../buttons/ContactUsButton';
 export default function HomepageHeader() {
   const [isHeaderVisible, setHeaderVisible] = useState(true);
   const prevScrollPos = useRef(0);

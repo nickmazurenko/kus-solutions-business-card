@@ -1,8 +1,8 @@
+import aboutUs from '@/data/aboutUs.json';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 import './styles/text.css';
-import aboutUs from '@/data/aboutUs.json';
 
 interface AboutUsProps {
   className?: string;

@@ -1,8 +1,8 @@
+import technologies from '@/data/technologies.json';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import OrderNowButton from '../buttons/OrderNowButton';
-import technologies from '@/data/technologies.json';
 
 const { logos, technologiesText } = technologies;
 
