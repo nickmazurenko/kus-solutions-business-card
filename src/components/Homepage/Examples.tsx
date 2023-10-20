@@ -30,7 +30,7 @@ const ExampleCard = (props: ExampleCardProps) => {
         }}
         className={`${
           hover ? 'from-primary/80' : 'from-primary/40 '
-        } flex min-h-[180px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br  object-cover shadow-tl shadow-primary transition-colors delay-1000 md:min-h-[200px]`}
+        } relative flex h-[250px] min-h-[180px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br  object-cover shadow-tl shadow-primary transition-colors delay-1000 md:h-[400px] md:min-h-[200px]`}
       >
         <Image
           alt='example-image'
@@ -39,7 +39,7 @@ const ExampleCard = (props: ExampleCardProps) => {
           height={500}
           className={`${
             hover ? '-rotate-6' : ''
-          } h-auto w-full -rotate-12 transform object-contain shadow-repeat shadow-primary/20 duration-200 md:w-4/5 md:translate-y-10`}
+          } absolute right-0 top-0 h-auto w-4/5 translate-y-14 -rotate-12 transform object-contain shadow-repeat shadow-primary/20 duration-200`}
         />
       </div>
       <div className='flex flex-wrap gap-2 self-start'>
