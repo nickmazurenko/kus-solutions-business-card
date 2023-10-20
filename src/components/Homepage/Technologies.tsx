@@ -2,7 +2,9 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import OrderNowButton from '../buttons/OrderNowButton';
-import { logos, technologiesText } from '@/data/technologies.json';
+import technologies from '@/data/technologies.json';
+
+const { logos, technologiesText } = technologies;
 
 const config = {
   circlesNum: 21, // The total amount of circles for technologies
