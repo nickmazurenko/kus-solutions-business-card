@@ -19,7 +19,7 @@ const ExampleCard = (props: ExampleCardProps) => {
   const [hover, setHover] = useState(false);
   return (
     <div
-      className={`${className} relative flex w-full flex-col items-center justify-center gap-5 text-secondary md:h-[500px] md:w-[600px]`}
+      className={`${className} relative flex w-full flex-col items-center justify-center gap-5 text-secondary md:h-[600px] md:w-[600px]`}
     >
       <div
         onMouseEnter={() => {
