@@ -1,33 +1,7 @@
+import examples from '@/data/examples.json';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-
-const examples = [
-  {
-    image: '/assets/test.png',
-    text: 'Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.',
-    title: 'Website Name',
-    tags: ['smth', 'another tag', 'something else']
-  },
-  {
-    image: '/assets/test.png',
-    text: 'Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.',
-    title: 'Website Name',
-    tags: ['smth', 'another tag', 'something else']
-  },
-  {
-    image: '/assets/test.png',
-    text: 'Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.',
-    title: 'Website Name',
-    tags: ['smth', 'another tag', 'something else']
-  },
-  {
-    image: '/assets/test.png',
-    text: 'Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.',
-    title: 'Website Name',
-    tags: ['smth', 'another tag', 'something else']
-  }
-];
 
 interface ExamplesProps {
   className?: string;
@@ -45,7 +19,7 @@ const ExampleCard = (props: ExampleCardProps) => {
   const [hover, setHover] = useState(false);
   return (
     <div
-      className={`${className} flex w-full flex-col items-center justify-center gap-5 text-secondary md:h-[500px] md:w-[600px]`}
+      className={`${className} relative flex w-full flex-col items-center justify-center gap-5 text-secondary md:h-[600px] md:w-[600px]`}
     >
       <div
         onMouseEnter={() => {
@@ -56,7 +30,7 @@ const ExampleCard = (props: ExampleCardProps) => {
         }}
         className={`${
           hover ? 'from-primary/80' : 'from-primary/40 '
-        } flex min-h-[180px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br  object-cover shadow-tl shadow-primary transition-colors delay-1000 md:min-h-[200px]`}
+        } relative flex h-[250px] min-h-[180px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br  object-cover shadow-tl shadow-primary transition-colors delay-1000 md:h-[400px] md:min-h-[200px]`}
       >
         <Image
           alt='example-image'
@@ -65,7 +39,7 @@ const ExampleCard = (props: ExampleCardProps) => {
           height={500}
           className={`${
             hover ? '-rotate-6' : ''
-          } h-auto w-full -rotate-12 transform object-contain shadow-repeat shadow-primary/20 duration-200 md:w-4/5 md:translate-y-10`}
+          } absolute right-0 top-0 h-auto w-4/5 translate-y-14 -rotate-12 transform object-contain shadow-repeat shadow-primary/20 duration-200`}
         />
       </div>
       <div className='flex flex-wrap gap-2 self-start'>
@@ -105,6 +79,7 @@ export default function HomepageExamples(props: ExamplesProps) {
       id='examples'
       className={`${className} relative flex h-full w-full flex-col items-center justify-center gap-10 p-5 md:p-10`}
     >
+      <div className='spotlight spotlight-left'></div>
       <div className='font-dongle text-5xl  uppercase text-secondary'>Examples</div>
       <div
         ref={bgTextRef}

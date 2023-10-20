@@ -1,6 +1,6 @@
+import { gsap } from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
 
 export default function ImageBanner({ className }: { className?: string }) {
   const image1Ref = useRef(null);

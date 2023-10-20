@@ -1,3 +1,4 @@
+import reviews from '@/data/reviews.json';
 import { Carousel } from 'flowbite-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -5,18 +6,8 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { PiControlBold } from 'react-icons/pi';
 import './styles/text.css';
-gsap.registerPlugin(ScrollTrigger);
 
-const reviews = [
-  {
-    image: '/assets/catPurple.png',
-    text: 'Officia pariatur consequat voluptate dolore sint eiusmod mollit exercitation commodo. Ex in elit tempor irure quis officia ea et cupidatat proident aute sunt incididunt eiusmod. Aute cillum proident commodo irure. Ullamco ea dolor exercitation aute ipsum est laboris est veniam eiusmod occaecat et velit minim.Aute officia laboris fugiat labore commodo eu irure ad tempor eu pariatur eiusmod. Deserunt ea adipisicing incididunt veniam irure do aliqua Lorem reprehenderit reprehenderit labore proident. Ut ipsum laborum consequat sit tempor.'
-  },
-  {
-    image: '/assets/catPurple.png',
-    text: 'Officia pariatur consequat voluptate dolore sint eiusmod mollit exercitation commodo. Ex in elit tempor irure quis officia ea et cupidatat proident aute sunt incididunt eiusmod. Aute cillum proident commodo irure.'
-  }
-];
+gsap.registerPlugin(ScrollTrigger);
 
 interface CarouselSlideProps {
   text: string;

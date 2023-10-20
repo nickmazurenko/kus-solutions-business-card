@@ -1,9 +1,9 @@
 import { Navbar } from 'flowbite-react';
-import ContactUsButton from '../buttons/ContactUsButton';
-import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/all';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import ContactUsButton from '../buttons/ContactUsButton';
 export default function HomepageHeader() {
   const [isHeaderVisible, setHeaderVisible] = useState(true);
   const prevScrollPos = useRef(0);
@@ -70,13 +70,12 @@ export default function HomepageHeader() {
             <div className='whitespace-nowrap'>Solutions</div>
           </div>
         </Navbar.Brand>
-        <div className='hover:text-primarylg:gap-6 flex h-full cursor-pointer items-center gap-2 text-xs text-secondary md:order-2  md:text-base lg:pr-5'>
+        <div className='flex h-full cursor-pointer items-center gap-2 text-xs text-secondary hover:text-primary md:order-2 md:text-base  lg:gap-6 lg:pr-5'>
           <ContactUsButton
             onClick={() => {
               setSectionId('#contactUs');
             }}
           />
-          <span className='text-xs'>EN\UA</span>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>

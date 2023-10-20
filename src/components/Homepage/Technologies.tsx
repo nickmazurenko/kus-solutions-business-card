@@ -1,29 +1,14 @@
+import technologies from '@/data/technologies.json';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import OrderNowButton from '../buttons/OrderNowButton';
 
-// technologies logos
-const logos = [
-  '/assets/techLogos/reactLogo.png',
-  '/assets/techLogos/nextLogo.png',
-  '/assets/techLogos/materialLogo.png',
-  '/assets/techLogos/tailwindLogo.png',
-  '/assets/techLogos/mongoLogo.png',
-  '/assets/techLogos/postgreLogo.png',
-  '/assets/techLogos/dockerLogo.png',
-  '/assets/techLogos/nodeLogo.png',
-  '/assets/techLogos/typescriptLogo.png',
-  '/assets/techLogos/shopifyLogo.png',
-  '/assets/techLogos/telegrafLogo.png'
-];
+const { logos, technologiesText } = technologies;
 
 const config = {
   circlesNum: 21, // The total amount of circles for technologies
-  parallaxIntensity: 70, // Adjust the factor to change the intensity of circles movement
-  // Text for technologies card
-  technologiesText:
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum dolores minima quo soluta iste amet cumque necessitatibus laborum quidem id laudantium, repellat consequatur, eius dolor ad tenetur rem, dolorem corrupti!'
+  parallaxIntensity: 70 // Adjust the factor to change the intensity of circles movement
 };
 
 interface HomepageTechnologies {
@@ -48,9 +33,7 @@ const TextCard = (props: TextCardProps) => {
           powerful tools
         </div>
       </div>
-      <div className='w-full rounded-3xl text-justify text-3xl md:w-1/2'>
-        {config.technologiesText}
-      </div>
+      <div className='w-full rounded-3xl text-justify text-3xl md:w-1/2'>{technologiesText}</div>
       <OrderNowButton />
     </div>
   );

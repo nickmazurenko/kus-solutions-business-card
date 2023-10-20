@@ -1,3 +1,4 @@
+import contacts from '@/data/contacts.json';
 import { Tooltip } from 'flowbite-react';
 import gsap from 'gsap';
 import Image from 'next/image';
@@ -16,11 +17,6 @@ import {
 interface HomepageFooterProps {
   className?: string;
 }
-
-const contacts = {
-  email: 'long.exapmle@gmail.com',
-  number: '+38 (022) 222-22-22'
-};
 
 export default function HomepageFooter(props: HomepageFooterProps) {
   const { className } = props;
@@ -116,7 +112,7 @@ export default function HomepageFooter(props: HomepageFooterProps) {
         </div>
         <div className='flex w-full flex-col items-center justify-center md:items-end'>
           <Tooltip
-            placement='left'
+            placement={window.innerWidth >= 500 ? 'left' : 'top'}
             trigger='click'
             className='bg-gradient-to-br from-primary px-2 py-0'
             content={
@@ -136,7 +132,7 @@ export default function HomepageFooter(props: HomepageFooterProps) {
             </div>
           </Tooltip>
           <Tooltip
-            placement='left'
+            placement={window.innerWidth >= 500 ? 'left' : 'top'}
             trigger='click'
             className='bg-gradient-to-br from-primary px-2 py-0'
             content={
