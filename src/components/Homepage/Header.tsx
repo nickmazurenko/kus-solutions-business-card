@@ -70,13 +70,12 @@ export default function HomepageHeader() {
             <div className='whitespace-nowrap'>Solutions</div>
           </div>
         </Navbar.Brand>
-        <div className='hover:text-primarylg:gap-6 flex h-full cursor-pointer items-center gap-2 text-xs text-secondary md:order-2  md:text-base lg:pr-5'>
+        <div className='flex h-full cursor-pointer items-center gap-2 text-xs text-secondary hover:text-primary md:order-2 md:text-base  lg:gap-6 lg:pr-5'>
           <ContactUsButton
             onClick={() => {
               setSectionId('#contactUs');
             }}
           />
-          <span className='text-xs'>EN\UA</span>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
