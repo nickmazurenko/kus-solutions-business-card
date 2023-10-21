@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Business Card
 
-## Getting Started
+[![Version](https://img.shields.io/static/v1?label=version&message=1.0.0&color=blue)](https://shields.io/)
+[![NPM](https://img.shields.io/static/v1?label=npm&message=10.1.0color=blue)](https://shields.io/)
+[![NODE](https://img.shields.io/static/v1?label=node&message=20.7.0&color=success)](https://shields.io/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://shields.io/)
 
-First, run the development server:
+### [🌐 Website](https://deleashers-chronos.netlify.app/)
 
-```bash
+This repository is a simple and elegant business-card website for Kus Solutions, a company specializing in website design and development. The website serves as a showcase for Kus Solutions' portfolio, client reviews, and a convenient contact form. It provides a clear and concise overview of the company's web design expertise and offers a seamless way for visitors to explore past work and get in touch.
+
+![Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?title=Tech+Stack&align=center&titleAlign=center&lineCount=2&width=600&bg=%230D1117&badge=%23161B22&border=%2321262D&titleColor=%2358A6FF&line1=react%2Creact%2C9bf266%3Bnext.js%2Cnext.js%2C9f179b%3B&line2=prettier%2Cprettier%2Cf0a892%3Btypescript%2Ctypescript%2C1227c0%3Btailwindcss%2Ctailwindcss%2C195c11%3B)
+
+
+## Installation
+
+To run the project locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/nickmazurenko/kus-solutions-business-card.git`
+2. Navigate to the project directory: `cd kus-solutions-business-card`
+3. Install dependencies: `npm install`
+
+## Usage
+
+To start the development server, run the following command:
+
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the server at http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Responsive Design: The website is fully responsive, ensuring a seamless and user-friendly experience on various devices and screen sizes.
 
-## Learn More
+- Portfolio Showcase: Explore a curated collection of Kus Solutions' website creations with detailed project descriptions.
 
-To learn more about Next.js, take a look at the following resources:
+- Client Reviews: Read authentic reviews from satisfied clients to gain insight into the company's quality of service and expertise.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Contact Form: Easily get in touch with Kus Solutions through a convenient contact form, simplifying the communication process.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Demo
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We welcome contributions to the Gatherwise project! To contribute, follow these steps:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b my-new-feature`
+3. Make changes and commit them: `git commit -m "Add my new feature"`
+4. Push to the branch: `git push origin my-new-feature`
+5. Create a pull request
+
+Please ensure that your code follows our coding standards and includes appropriate tests.
+
+## Credits
+
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
