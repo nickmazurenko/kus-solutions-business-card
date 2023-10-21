@@ -44,14 +44,15 @@ This will start the server at http://localhost:3000.
 
 [PC Video](https://www.dropbox.com/scl/fi/7e6krhwrbl2go0dfdnenh/pc-video_AdobeExpress.mp4?rlkey=gjplbhjobi10du18kjyozmetr&dl=0)
 
-![Screenshot 2023-10-21 154835](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/cfb1066b-de27-4e99-9c04-228918959b2d)
-![Screenshot 2023-10-21 154946](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/684bbb4c-021e-43fc-a702-a19bd8906798)
-![Screenshot 2023-10-21 155004](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/fbbc9450-7b6b-42b8-b43b-5f3fc853f944)
-![Screenshot 2023-10-21 155032](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/f4a05923-663a-4d25-88a1-f96395b42674)
-![Screenshot 2023-10-21 155051](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/8e392e97-c677-4943-b02e-75560764ba96)
+![Screenshot 2023-10-21 154835](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/38967a65-8bcb-453a-b4cd-eb4a61e4906c)
+![Screenshot 2023-10-21 154946](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/5429133b-8f83-4b58-a2d7-8f6101e77be0)
+![Screenshot 2023-10-21 155004](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/54b32b39-2dc9-423e-a2d7-b1b62860b975)
+![Screenshot 2023-10-21 155032](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/58d33c26-ada7-40b8-956c-83ff0a3a0f68)
+![Screenshot 2023-10-21 155051](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/ed11c583-39c5-4583-a387-7ef1ad149f92)
 
 
-https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/26e50924-9385-43a6-8f02-844354cc804a
+https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/ccef1ec0-ab4e-4a1e-b727-b875abfa0dc9
+
 
 
 ## Contributing
