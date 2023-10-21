@@ -42,6 +42,17 @@ This will start the server at http://localhost:3000.
 
 # Demo
 
+[PC Video](https://www.dropbox.com/scl/fi/7e6krhwrbl2go0dfdnenh/pc-video_AdobeExpress.mp4?rlkey=gjplbhjobi10du18kjyozmetr&dl=0)
+
+![Screenshot 2023-10-21 154835](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/cfb1066b-de27-4e99-9c04-228918959b2d)
+![Screenshot 2023-10-21 154946](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/684bbb4c-021e-43fc-a702-a19bd8906798)
+![Screenshot 2023-10-21 155004](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/fbbc9450-7b6b-42b8-b43b-5f3fc853f944)
+![Screenshot 2023-10-21 155032](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/f4a05923-663a-4d25-88a1-f96395b42674)
+![Screenshot 2023-10-21 155051](https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/8e392e97-c677-4943-b02e-75560764ba96)
+
+
+https://github.com/nickmazurenko/kus-solutions-business-card/assets/48516366/26e50924-9385-43a6-8f02-844354cc804a
+
 
 ## Contributing
 
