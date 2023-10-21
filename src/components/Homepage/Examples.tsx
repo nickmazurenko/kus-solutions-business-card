@@ -1,7 +1,9 @@
 import examples from '@/data/examples.json';
+import { Carousel } from 'flowbite-react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import { PiControlBold } from 'react-icons/pi';
 
 interface ExamplesProps {
   className?: string;
@@ -9,13 +11,23 @@ interface ExamplesProps {
 
 interface ExampleCardProps {
   className?: string;
-  image: string;
+  preview: string;
+  images: string[];
   tags?: string[];
   title: string;
   text: string;
 }
+
+const CarouselControl = ({ className }: { className: string }) => {
+  return (
+    <div className={`text-5xl text-primary ${className}`}>
+      <PiControlBold />
+    </div>
+  );
+};
+
 const ExampleCard = (props: ExampleCardProps) => {
-  const { className, tags, image, title, text } = props;
+  const { className, tags, preview, images, title, text } = props;
   const [hover, setHover] = useState(false);
   return (
     <div
@@ -32,15 +44,35 @@ const ExampleCard = (props: ExampleCardProps) => {
           hover ? 'from-primary/80' : 'from-primary/40 '
         } relative flex h-[250px] min-h-[180px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br  object-cover shadow-tl shadow-primary transition-colors delay-1000 md:h-[400px] md:min-h-[200px]`}
       >
-        <Image
-          alt='example-image'
-          src={image}
-          width={500}
-          height={500}
-          className={`${
-            hover ? '-rotate-6' : ''
-          } absolute right-0 top-0 h-auto w-4/5 translate-y-14 -rotate-12 transform object-contain shadow-repeat shadow-primary/20 duration-200`}
-        />
+        <Carousel
+          leftControl={<CarouselControl className='-rotate-90' />}
+          rightControl={<CarouselControl className='rotate-90' />}
+          slide={false}
+          className='relative h-full w-full'
+        >
+          <div className='relative h-full w-full'>
+            <Image
+              alt='example-image'
+              src={preview}
+              width={500}
+              height={500}
+              className={`${
+                hover ? '-rotate-6' : ''
+              } absolute right-0 top-10 h-auto w-4/5 -rotate-12 transform object-contain shadow-repeat shadow-primary/20 duration-200`}
+            />
+          </div>
+          {images.map((image, index) => (
+            <div key={index} className='relative h-full w-full'>
+              <Image
+                alt='example-image'
+                src={image}
+                width={500}
+                height={500}
+                className={`absolute top-0 h-auto w-full  object-contain`}
+              />
+            </div>
+          ))}
+        </Carousel>
       </div>
       <div className='flex flex-wrap gap-2 self-start'>
         {tags?.map((tag, index) => (
@@ -90,7 +122,8 @@ export default function HomepageExamples(props: ExamplesProps) {
       <div className='z-30 flex h-full w-full flex-wrap items-center justify-around gap-10'>
         {examples.map((example, index) => (
           <ExampleCard
-            image={example.image}
+            preview={example.preview}
+            images={example.images}
             text={example.text}
             key={index}
             title={example.title}

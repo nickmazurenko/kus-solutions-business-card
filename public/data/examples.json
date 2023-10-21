@@ -1,26 +1,31 @@
 [
   {
-    "image": "/assets/examples/example.png",
+    "preview": "/assets/examples/example.png",
     "text": "Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.",
     "title": "Website Name",
-    "tags": ["smth", "another tag", "something else"]
+    "tags": ["smth", "another tag", "something else"],
+    "images": ["/assets/examples/example.png", "/assets/examples/example1.png"]
   },
   {
-    "image": "/assets/examples/example1.png",
+    "preview": "/assets/examples/example1.png",
     "text": "Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.",
     "title": "Website Name",
-    "tags": ["smth", "another tag", "something else"]
+    "tags": ["smth", "another tag", "something else"],
+    "images": ["/assets/examples/example1.png"]
   },
   {
-    "image": "/assets/examples/example2.png",
+    "preview": "/assets/examples/example2.png",
     "text": "Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.",
     "title": "Website Name",
-    "tags": ["smth", "another tag", "something else"]
+    "tags": ["smth", "another tag", "something else"],
+    "images": ["/assets/examples/example2.png"]
   },
   {
-    "image": "/assets/examples/example3.png",
+    "preview": "/assets/examples/example3.png",
+
     "text": "Sit ex aliquip consequat labore qui aute anim sit. Aliquip fugiat elit ad officia id ad exercitation sit excepteur duis. Nostrud qui ullamco labore nostrud ullamco commodo aute ut proident elit occaecat magna. Veniam quis proident eiusmod laborum laboris veniam. Sunt dolor Lorem sunt aliqua ipsum fugiat aliquip do officia sint minim tempor. Consequat in adipisicing consectetur cillum amet do nulla amet minim sint.",
     "title": "Website Name",
-    "tags": ["smth", "another tag", "something else"]
+    "tags": ["smth", "another tag", "something else"],
+    "images": ["/assets/examples/example2.png"]
   }
 ]
