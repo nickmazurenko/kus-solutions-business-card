@@ -1,5 +1,5 @@
 import examples from '@/data/examples.json';
-import { Carousel } from 'flowbite-react';
+import { Carousel, Modal } from 'flowbite-react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
@@ -28,92 +28,168 @@ const CarouselControl = ({ className }: { className: string }) => {
   );
 };
 
-const ExampleCard = (props: ExampleCardProps) => {
-  const { className, tags, preview, images, title, text, link } = props;
-  const [hover, setHover] = useState(false);
+const ExampleModal = ({
+  example,
+  show,
+  setShow
+}: {
+  example: ExampleCardProps;
+  show: boolean;
+  setShow: (show: boolean) => void;
+}) => {
+  const [imageHover, setImageHover] = useState(false);
   return (
-    <div
-      className={`${className} relative flex w-full flex-col items-center justify-center gap-5 text-secondary
-      md:h-[650px]  md:w-[600px]`}
+    <Modal
+      size='7xl'
+      show={show}
+      onClose={() => setShow(false)}
+      style={{ backgroundColor: 'transparent !important' }}
+      className='animate-appear bg-transparent font-dongle backdrop-blur-sm'
     >
-      <div
-        onMouseEnter={() => {
-          setHover(true);
-        }}
-        onMouseLeave={() => {
-          setHover(false);
-        }}
-        className={`${
-          hover ? 'from-primary/80' : 'from-primary/40 '
-        } relative flex h-[250px] min-h-[180px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br  object-cover shadow-tl shadow-primary transition-colors delay-1000 md:h-[400px] md:min-h-[200px]`}
-      >
-        <Carousel
-          leftControl={<CarouselControl className='-rotate-90' />}
-          rightControl={<CarouselControl className='rotate-90' />}
-          slide={false}
-          className='relative h-full w-full'
-        >
-          <div className='relative h-full w-full'>
-            <Image
-              alt='example-image'
-              src={preview}
-              width={500}
-              height={500}
-              className={`${
-                hover ? '-rotate-6' : ''
-              } absolute right-0 top-10 h-auto w-4/5 -rotate-12 transform object-contain shadow-repeat shadow-primary/20 duration-200`}
-            />
+      <Modal.Header className='border-b-primary bg-background dark:border-b-primary'>
+        <div className='text-5xl text-secondary'>{example.title}</div>
+      </Modal.Header>
+      <Modal.Body className='bg-background'>
+        <div className='relative flex flex-col items-center justify-center gap-5 bg-black text-2xl text-gray-400 md:p-5'>
+          <div className='h-[50vh] w-full md:h-[100vh]'>
+            <Carousel
+              leftControl={<CarouselControl className='-rotate-90' />}
+              rightControl={<CarouselControl className='rotate-90' />}
+              slide={false}
+              className='relative h-full w-full'
+            >
+              {example.images.map((image, index) => (
+                <div key={index} className='relative h-full w-full'>
+                  <Image
+                    alt='example-image'
+                    src={image}
+                    width={1000}
+                    height={1000}
+                    onMouseEnter={() => setImageHover(true)}
+                    onMouseLeave={() => setImageHover(false)}
+                    className={`${
+                      imageHover ? '-translate-y-1/2' : ''
+                    } absolute top-0 h-auto w-full transition-all duration-[4000ms]`}
+                  />
+                </div>
+              ))}
+            </Carousel>
           </div>
-          {images.map((image, index) => (
-            <div key={index} className='relative h-full w-full'>
+          <div className='flex flex-wrap gap-2 self-start'>
+            {example.tags?.map((tag, index) => (
+              <div key={index} className='rounded-xl bg-primary/70 p-2 text-gray-300'>
+                {tag}
+              </div>
+            ))}
+          </div>
+          <div className={` w-full break-words text-justify font-dongle text-2xl text-gray-300`}>
+            {example.text}
+          </div>
+          <a href={example.link} target='_blank' rel='noopener noreferrer'>
+            <DoubleButton
+              label={
+                <div className='flex flex-row items-center justify-center gap-2 px-10 text-xl tracking-wider'>
+                  <PiLinkBold /> <span>Go to Website</span>
+                </div>
+              }
+              className='p-2 px-10 text-sm lg:text-base'
+            />
+          </a>
+        </div>
+      </Modal.Body>
+      <Modal.Footer className='border-none bg-black  p-1 dark:border-none' />
+    </Modal>
+  );
+};
+
+const ExampleCard = (props: ExampleCardProps) => {
+  const { className, tags, preview, images, title, text } = props;
+  const [showModal, setShowModal] = useState(false);
+  const [hover, setHover] = useState(false);
+  const [imageHover, setImageHover] = useState(false);
+  return (
+    <>
+      <ExampleModal example={props} setShow={setShowModal} show={showModal} />
+      <div
+        className={`${className} relative flex w-full flex-col items-center justify-center gap-5 text-secondary
+      md:h-[650px]  md:w-[600px]`}
+      >
+        <div
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+          }}
+          className={`${
+            hover ? 'from-primary/80' : 'from-primary/40 '
+          } relative flex h-[250px] min-h-[180px] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br  object-cover shadow-tl shadow-primary transition-colors delay-1000 md:h-[400px] md:min-h-[200px]`}
+        >
+          <Carousel
+            leftControl={<CarouselControl className='-rotate-90' />}
+            rightControl={<CarouselControl className='rotate-90' />}
+            slide={false}
+            className='relative h-full w-full'
+          >
+            <div className='relative h-full w-full'>
               <Image
                 alt='example-image'
-                src={image}
+                src={preview}
                 width={500}
                 height={500}
-                className={`absolute top-0 h-auto w-full  object-contain`}
+                className={`${
+                  hover ? '-rotate-6' : ''
+                } absolute right-0 top-10 h-auto w-4/5 -rotate-12 transform object-contain shadow-repeat shadow-primary/20 duration-200`}
               />
             </div>
-          ))}
-        </Carousel>
-      </div>
-      <div className='flex w-full flex-row items-center justify-between'>
-        <div className='flex flex-wrap gap-2 self-start'>
-          {tags?.map((tag, index) => (
-            <div key={index} className='rounded-xl bg-primary/40 p-2'>
-              {tag}
-            </div>
-          ))}
-        </div>
-        <a className='hidden md:block' href={link} target='_blank' rel='noopener noreferrer'>
-          <DoubleButton
-            label={
-              <div className='flex flex-row gap-2'>
-                <PiLinkBold /> Visit
+            {images.map((image, index) => (
+              <div key={index} className='relative h-full w-full'>
+                <Image
+                  onMouseEnter={() => setImageHover(true)}
+                  onMouseLeave={() => setImageHover(false)}
+                  alt='example-image'
+                  src={image}
+                  width={500}
+                  height={500}
+                  className={`${
+                    imageHover ? '-translate-y-1/2' : ''
+                  } absolute top-0 h-auto w-full object-contain transition-all duration-[4000ms]`}
+                />
               </div>
-            }
-            className='text-sm md:p-2 md:px-5 lg:text-base'
+            ))}
+          </Carousel>
+        </div>
+        <div className='flex w-full flex-row items-center justify-between'>
+          <div className='flex flex-wrap gap-2 self-start'>
+            {tags?.map((tag, index) => (
+              <div key={index} className='rounded-xl bg-primary/40 p-2'>
+                {tag}
+              </div>
+            ))}
+          </div>
+          <div className='hidden md:block'>
+            <DoubleButton
+              onClick={() => setShowModal(true)}
+              label={<div className='flex flex-row items-center gap-2'>Read More</div>}
+              className='text-sm md:p-2 md:px-5 lg:text-base'
+            />
+          </div>
+        </div>
+        <div className='w-full text-left font-dongle text-4xl'>{title}</div>
+        <div
+          className={`line-clamp-3 w-full break-words text-justify font-dongle text-2xl text-gray-300`}
+        >
+          {text}
+        </div>
+        <div onClick={() => setShowModal(true)} className='block md:hidden'>
+          <DoubleButton
+            label={<div className='flex flex-row items-center gap-2'>Read More</div>}
+            className='p-2 px-5 text-sm lg:text-base'
           />
-        </a>
+        </div>
+        <div className='block w-5/6 border-b-4 border-primary md:hidden'></div>
       </div>
-      <div className='w-full text-left font-dongle text-4xl'>{title}</div>
-      <div
-        className={`line-clamp-3 w-full break-words text-justify font-dongle text-2xl text-gray-300`}
-      >
-        {text}
-      </div>
-      <a className='block md:hidden' href={link} target='_blank' rel='noopener noreferrer'>
-        <DoubleButton
-          label={
-            <div className='flex flex-row gap-2'>
-              <PiLinkBold /> Visit
-            </div>
-          }
-          className='p-2 px-5 text-sm lg:text-base'
-        />
-      </a>
-      <div className='block w-5/6 border-b-4 border-primary md:hidden'></div>
-    </div>
+    </>
   );
 };
 
