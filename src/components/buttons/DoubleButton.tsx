@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import './styles/OrderNowButton.css';
 interface DoubleButtonProps extends ButtonHTMLAttributes<HTMLDivElement> {
   className?: string;
-  label: string;
+  label: string | ReactNode;
 }
 
 export default function DoubleButton(props: DoubleButtonProps) {
