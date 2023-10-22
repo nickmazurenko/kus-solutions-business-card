@@ -3,7 +3,8 @@ import { Carousel } from 'flowbite-react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { PiControlBold } from 'react-icons/pi';
+import { PiControlBold, PiLinkBold } from 'react-icons/pi';
+import DoubleButton from '../buttons/DoubleButton';
 
 interface ExamplesProps {
   className?: string;
@@ -16,6 +17,7 @@ interface ExampleCardProps {
   tags?: string[];
   title: string;
   text: string;
+  link?: string;
 }
 
 const CarouselControl = ({ className }: { className: string }) => {
@@ -27,11 +29,12 @@ const CarouselControl = ({ className }: { className: string }) => {
 };
 
 const ExampleCard = (props: ExampleCardProps) => {
-  const { className, tags, preview, images, title, text } = props;
+  const { className, tags, preview, images, title, text, link } = props;
   const [hover, setHover] = useState(false);
   return (
     <div
-      className={`${className} relative flex w-full flex-col items-center justify-center gap-5 text-secondary md:h-[600px] md:w-[600px]`}
+      className={`${className} relative flex w-full flex-col items-center justify-center gap-5 text-secondary
+      md:h-[650px]  md:w-[600px]`}
     >
       <div
         onMouseEnter={() => {
@@ -74,15 +77,29 @@ const ExampleCard = (props: ExampleCardProps) => {
           ))}
         </Carousel>
       </div>
-      <div className='flex flex-wrap gap-2 self-start'>
-        {tags?.map((tag, index) => (
-          <div key={index} className='rounded-xl bg-primary/40 p-2'>
-            {tag}
-          </div>
-        ))}
+      <div className='flex w-full flex-row items-center justify-between'>
+        <div className='flex flex-wrap gap-2 self-start'>
+          {tags?.map((tag, index) => (
+            <div key={index} className='rounded-xl bg-primary/40 p-2'>
+              {tag}
+            </div>
+          ))}
+        </div>
+        <a href={link} target='_blank' rel='noopener noreferrer'>
+          <DoubleButton
+            label={
+              <div className='flex flex-row gap-2'>
+                <PiLinkBold /> Visit
+              </div>
+            }
+            className='text-sm md:p-2 md:px-5 lg:text-base'
+          />
+        </a>
       </div>
       <div className='w-full text-left font-dongle text-4xl'>{title}</div>
-      <div className='line-clamp-3 w-full break-words text-justify font-dongle text-2xl text-gray-300'>
+      <div
+        className={`line-clamp-3 w-full break-words text-justify font-dongle text-2xl text-gray-300`}
+      >
         {text}
       </div>
       <div className='block w-1/2 border-b-4 border-primary md:hidden'></div>
@@ -128,6 +145,7 @@ export default function HomepageExamples(props: ExamplesProps) {
             key={index}
             title={example.title}
             tags={example.tags}
+            link={example.link}
           />
         ))}
       </div>
