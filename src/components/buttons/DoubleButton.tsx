@@ -9,7 +9,7 @@ export default function DoubleButton(props: DoubleButtonProps) {
   const { className, onClick, label } = props;
   return (
     <div
-      className={`${className} box translate-x-0 cursor-pointer rounded-xl bg-gray-600/50 px-5 py-4 font-coiny text-2xl text-secondary shadow lg:text-4xl`}
+      className={`${className} box button-shadow translate-x-0 cursor-pointer rounded-xl bg-gray-600/50 px-5 py-4 font-coiny text-2xl text-secondary lg:text-4xl`}
       onClick={onClick}
     >
       {label}

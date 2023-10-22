@@ -9,7 +9,7 @@
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.shadow:before {
+.button-shadow:before {
   content: '';
   position: absolute;
   inset: 0;

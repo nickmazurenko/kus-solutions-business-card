@@ -23,7 +23,7 @@ export default function OrderNowButton(props: OrderNowButtonProps) {
 
   return (
     <div
-      className={`${className} box translate-x-0 cursor-pointer rounded-xl bg-gray-600/50 px-5 py-4 text-center font-coiny text-2xl text-secondary shadow [@media(min-width:1000px)]:text-[25px] [@media(min-width:1200px)]:text-4xl`}
+      className={`${className} box button-shadow translate-x-0 cursor-pointer rounded-xl bg-gray-600/50 px-5 py-4 text-center font-coiny text-2xl text-secondary [@media(min-width:1000px)]:text-[25px] [@media(min-width:1200px)]:text-4xl`}
       onClick={() => {
         setSectionId('#contactUs');
       }}
