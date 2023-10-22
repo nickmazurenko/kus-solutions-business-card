@@ -85,7 +85,7 @@ const ExampleCard = (props: ExampleCardProps) => {
             </div>
           ))}
         </div>
-        <a href={link} target='_blank' rel='noopener noreferrer'>
+        <a className='hidden md:block' href={link} target='_blank' rel='noopener noreferrer'>
           <DoubleButton
             label={
               <div className='flex flex-row gap-2'>
@@ -102,7 +102,17 @@ const ExampleCard = (props: ExampleCardProps) => {
       >
         {text}
       </div>
-      <div className='block w-1/2 border-b-4 border-primary md:hidden'></div>
+      <a className='block md:hidden' href={link} target='_blank' rel='noopener noreferrer'>
+        <DoubleButton
+          label={
+            <div className='flex flex-row gap-2'>
+              <PiLinkBold /> Visit
+            </div>
+          }
+          className='p-2 px-5 text-sm lg:text-base'
+        />
+      </a>
+      <div className='block w-5/6 border-b-4 border-primary md:hidden'></div>
     </div>
   );
 };
